@@ -1,0 +1,10 @@
+pymupdf
+sentence-transformers
+faiss-cpu
+numpy
+pandas
+scikit-learn
+pyyaml
+tqdm
+rich
+matplotlib>=3.9.4

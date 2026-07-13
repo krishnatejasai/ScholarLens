@@ -1,0 +1,92 @@
+[
+  {
+    "claim_id": "c01",
+    "claim": "Dense Passage Retrieval uses learned dense representations to retrieve passages for open-domain question answering.",
+    "label": "SUPPORTED"
+  },
+  {
+    "claim_id": "c02",
+    "claim": "Dense Passage Retrieval relies exclusively on BM25 and does not use neural encoders.",
+    "label": "CONTRADICTED"
+  },
+  {
+    "claim_id": "c03",
+    "claim": "ColBERT uses late interaction between contextualized query and document token representations.",
+    "label": "SUPPORTED"
+  },
+  {
+    "claim_id": "c04",
+    "claim": "REALM stores all factual knowledge only in model parameters and does not retrieve external documents.",
+    "label": "CONTRADICTED"
+  },
+  {
+    "claim_id": "c05",
+    "claim": "RAG combines parametric memory with a non-parametric document index.",
+    "label": "SUPPORTED"
+  },
+  {
+    "claim_id": "c06",
+    "claim": "Self-RAG always retrieves documents for every generation step and never critiques its own outputs.",
+    "label": "CONTRADICTED"
+  },
+  {
+    "claim_id": "c07",
+    "claim": "CRAG evaluates retrieved documents and can trigger corrective retrieval actions.",
+    "label": "SUPPORTED"
+  },
+  {
+    "claim_id": "c08",
+    "claim": "RAGAS is designed for reference-free evaluation of retrieval-augmented generation pipelines.",
+    "label": "SUPPORTED"
+  },
+  {
+    "claim_id": "c09",
+    "claim": "ALCE focuses on helping language models generate text with verifiable citations.",
+    "label": "SUPPORTED"
+  },
+  {
+    "claim_id": "c10",
+    "claim": "FActScore evaluates factual precision by decomposing long-form text into atomic facts.",
+    "label": "SUPPORTED"
+  },
+  {
+    "claim_id": "c11",
+    "claim": "SciFact contains scientific claims paired with supporting or refuting evidence and rationales.",
+    "label": "SUPPORTED"
+  },
+  {
+    "claim_id": "c12",
+    "claim": "SciFact uses only one label and does not distinguish support from refutation.",
+    "label": "CONTRADICTED"
+  },
+  {
+    "claim_id": "c13",
+    "claim": "FEVER includes supported, refuted, and not-enough-information style claim labels.",
+    "label": "SUPPORTED"
+  },
+  {
+    "claim_id": "c14",
+    "claim": "SPECTER learns scientific document representations without using citation information.",
+    "label": "CONTRADICTED"
+  },
+  {
+    "claim_id": "c15",
+    "claim": "Longformer reduces the quadratic cost of self-attention for long documents.",
+    "label": "SUPPORTED"
+  },
+  {
+    "claim_id": "c16",
+    "claim": "Lost in the Middle finds that language models perform best when relevant evidence is always placed in the middle of the context.",
+    "label": "CONTRADICTED"
+  },
+  {
+    "claim_id": "c17",
+    "claim": "The evaluated papers report that retrieval-augmented generation improved crop yields by 42 percent in 2023.",
+    "label": "INSUFFICIENT_EVIDENCE"
+  },
+  {
+    "claim_id": "c18",
+    "claim": "The corpus demonstrates that all retrieval systems use identical model architectures and training objectives.",
+    "label": "CONTRADICTED"
+  }
+]

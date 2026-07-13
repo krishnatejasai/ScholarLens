@@ -1,0 +1,362 @@
+[
+  {
+    "claim_id": "c01",
+    "claim": "Dense Passage Retrieval uses separate learned encoders to represent questions and passages.",
+    "label": "SUPPORTED",
+    "split": "dev"
+  },
+  {
+    "claim_id": "c02",
+    "claim": "ColBERT applies late interaction between contextualized query and document token embeddings.",
+    "label": "SUPPORTED",
+    "split": "test"
+  },
+  {
+    "claim_id": "c03",
+    "claim": "Contriever learns dense retrieval representations using contrastive learning without relevance labels.",
+    "label": "SUPPORTED",
+    "split": "dev"
+  },
+  {
+    "claim_id": "c04",
+    "claim": "GTR studies whether larger dual encoders generalize across retrieval domains.",
+    "label": "SUPPORTED",
+    "split": "test"
+  },
+  {
+    "claim_id": "c05",
+    "claim": "REALM retrieves external documents during language-model pretraining.",
+    "label": "SUPPORTED",
+    "split": "dev"
+  },
+  {
+    "claim_id": "c06",
+    "claim": "RAG combines parametric sequence-to-sequence memory with a non-parametric dense document index.",
+    "label": "SUPPORTED",
+    "split": "test"
+  },
+  {
+    "claim_id": "c07",
+    "claim": "Atlas applies retrieval-augmented language models to few-shot learning.",
+    "label": "SUPPORTED",
+    "split": "dev"
+  },
+  {
+    "claim_id": "c08",
+    "claim": "Self-RAG uses reflection mechanisms to retrieve, generate, and critique outputs.",
+    "label": "SUPPORTED",
+    "split": "test"
+  },
+  {
+    "claim_id": "c09",
+    "claim": "CRAG evaluates retrieved documents and can trigger corrective retrieval actions.",
+    "label": "SUPPORTED",
+    "split": "dev"
+  },
+  {
+    "claim_id": "c10",
+    "claim": "RAGAS provides reference-free metrics for evaluating retrieval-augmented generation pipelines.",
+    "label": "SUPPORTED",
+    "split": "test"
+  },
+  {
+    "claim_id": "c11",
+    "claim": "ALCE studies how language models can generate answers with verifiable citations.",
+    "label": "SUPPORTED",
+    "split": "dev"
+  },
+  {
+    "claim_id": "c12",
+    "claim": "FActScore decomposes long-form generations into atomic facts for factual-precision evaluation.",
+    "label": "SUPPORTED",
+    "split": "test"
+  },
+  {
+    "claim_id": "c13",
+    "claim": "SciFact contains scientific claims with supporting or refuting evidence and rationales.",
+    "label": "SUPPORTED",
+    "split": "dev"
+  },
+  {
+    "claim_id": "c14",
+    "claim": "SciFact-Open evaluates scientific claim verification over a substantially larger open-domain corpus.",
+    "label": "SUPPORTED",
+    "split": "test"
+  },
+  {
+    "claim_id": "c15",
+    "claim": "FEVER includes supported, refuted, and not-enough-information claim labels.",
+    "label": "SUPPORTED",
+    "split": "dev"
+  },
+  {
+    "claim_id": "c16",
+    "claim": "SPECTER uses citation information to learn scientific document representations.",
+    "label": "SUPPORTED",
+    "split": "test"
+  },
+  {
+    "claim_id": "c17",
+    "claim": "SciNCL uses neighborhood-based contrastive learning for scientific paper embeddings.",
+    "label": "SUPPORTED",
+    "split": "dev"
+  },
+  {
+    "claim_id": "c18",
+    "claim": "S2ORC provides structured scholarly text, metadata, citations, and bibliographic information.",
+    "label": "SUPPORTED",
+    "split": "test"
+  },
+  {
+    "claim_id": "c19",
+    "claim": "Longformer uses attention patterns whose computational cost scales linearly with sequence length.",
+    "label": "SUPPORTED",
+    "split": "dev"
+  },
+  {
+    "claim_id": "c20",
+    "claim": "Lost in the Middle reports weaker performance when relevant information appears in the middle of long contexts.",
+    "label": "SUPPORTED",
+    "split": "test"
+  },
+  {
+    "claim_id": "c21",
+    "claim": "Dense Passage Retrieval relies exclusively on BM25 and does not use neural encoders.",
+    "label": "CONTRADICTED",
+    "split": "dev"
+  },
+  {
+    "claim_id": "c22",
+    "claim": "ColBERT requires a full cross-encoder computation for every document before retrieval.",
+    "label": "CONTRADICTED",
+    "split": "test"
+  },
+  {
+    "claim_id": "c23",
+    "claim": "Contriever requires manually labeled relevance judgments for all of its training examples.",
+    "label": "CONTRADICTED",
+    "split": "dev"
+  },
+  {
+    "claim_id": "c24",
+    "claim": "GTR concludes that increasing dual-encoder size consistently reduces cross-domain retrieval performance.",
+    "label": "CONTRADICTED",
+    "split": "test"
+  },
+  {
+    "claim_id": "c25",
+    "claim": "REALM stores all factual knowledge only in model parameters and never retrieves external documents.",
+    "label": "CONTRADICTED",
+    "split": "dev"
+  },
+  {
+    "claim_id": "c26",
+    "claim": "RAG uses only parametric memory and does not access a document index.",
+    "label": "CONTRADICTED",
+    "split": "test"
+  },
+  {
+    "claim_id": "c27",
+    "claim": "Atlas is designed exclusively for supervised learning with thousands of labeled examples.",
+    "label": "CONTRADICTED",
+    "split": "dev"
+  },
+  {
+    "claim_id": "c28",
+    "claim": "Self-RAG always retrieves documents and does not critique its generated responses.",
+    "label": "CONTRADICTED",
+    "split": "test"
+  },
+  {
+    "claim_id": "c29",
+    "claim": "CRAG assumes all retrieved passages are reliable and performs no retrieval-quality assessment.",
+    "label": "CONTRADICTED",
+    "split": "dev"
+  },
+  {
+    "claim_id": "c30",
+    "claim": "RAGAS requires a gold reference answer for every metric it computes.",
+    "label": "CONTRADICTED",
+    "split": "test"
+  },
+  {
+    "claim_id": "c31",
+    "claim": "ALCE removes citations from generated answers because citations reduce factual reliability.",
+    "label": "CONTRADICTED",
+    "split": "dev"
+  },
+  {
+    "claim_id": "c32",
+    "claim": "FActScore evaluates factuality without decomposing text into atomic facts.",
+    "label": "CONTRADICTED",
+    "split": "test"
+  },
+  {
+    "claim_id": "c33",
+    "claim": "SciFact uses a single evidence label and does not distinguish support from refutation.",
+    "label": "CONTRADICTED",
+    "split": "dev"
+  },
+  {
+    "claim_id": "c34",
+    "claim": "SciFact-Open restricts verification to the same small fixed corpus used by the original SciFact benchmark.",
+    "label": "CONTRADICTED",
+    "split": "test"
+  },
+  {
+    "claim_id": "c35",
+    "claim": "FEVER contains only supported claims and does not include refuted or unverifiable examples.",
+    "label": "CONTRADICTED",
+    "split": "dev"
+  },
+  {
+    "claim_id": "c36",
+    "claim": "SPECTER learns paper representations without using citation relationships.",
+    "label": "CONTRADICTED",
+    "split": "test"
+  },
+  {
+    "claim_id": "c37",
+    "claim": "SciNCL selects positive and negative papers randomly without neighborhood information.",
+    "label": "CONTRADICTED",
+    "split": "dev"
+  },
+  {
+    "claim_id": "c38",
+    "claim": "S2ORC contains no citation links or structured bibliographic metadata.",
+    "label": "CONTRADICTED",
+    "split": "test"
+  },
+  {
+    "claim_id": "c39",
+    "claim": "Longformer preserves the quadratic self-attention cost of standard Transformers for long sequences.",
+    "label": "CONTRADICTED",
+    "split": "dev"
+  },
+  {
+    "claim_id": "c40",
+    "claim": "Lost in the Middle finds that models perform best whenever evidence is placed in the middle of the context.",
+    "label": "CONTRADICTED",
+    "split": "test"
+  },
+  {
+    "claim_id": "c41",
+    "claim": "The DPR paper reports a formal calibration analysis of retrieval confidence scores.",
+    "label": "INSUFFICIENT_EVIDENCE",
+    "split": "dev"
+  },
+  {
+    "claim_id": "c42",
+    "claim": "The ColBERT study includes a human evaluation of user satisfaction with search results.",
+    "label": "INSUFFICIENT_EVIDENCE",
+    "split": "test"
+  },
+  {
+    "claim_id": "c43",
+    "claim": "Contriever evaluates multilingual retrieval performance specifically on African-language benchmarks.",
+    "label": "INSUFFICIENT_EVIDENCE",
+    "split": "dev"
+  },
+  {
+    "claim_id": "c44",
+    "claim": "The GTR paper reports the total energy consumption and carbon emissions of model training.",
+    "label": "INSUFFICIENT_EVIDENCE",
+    "split": "test"
+  },
+  {
+    "claim_id": "c45",
+    "claim": "REALM evaluates robustness against adversarially modified retrieval documents.",
+    "label": "INSUFFICIENT_EVIDENCE",
+    "split": "dev"
+  },
+  {
+    "claim_id": "c46",
+    "claim": "The original RAG paper measures citation precision for every generated response.",
+    "label": "INSUFFICIENT_EVIDENCE",
+    "split": "test"
+  },
+  {
+    "claim_id": "c47",
+    "claim": "Atlas includes a human evaluation of the interpretability of its generated explanations.",
+    "label": "INSUFFICIENT_EVIDENCE",
+    "split": "dev"
+  },
+  {
+    "claim_id": "c48",
+    "claim": "Self-RAG reports inference latency and memory use on mobile devices.",
+    "label": "INSUFFICIENT_EVIDENCE",
+    "split": "test"
+  },
+  {
+    "claim_id": "c49",
+    "claim": "CRAG evaluates privacy leakage caused by external web retrieval.",
+    "label": "INSUFFICIENT_EVIDENCE",
+    "split": "dev"
+  },
+  {
+    "claim_id": "c50",
+    "claim": "RAGAS includes a dedicated evaluation of multilingual retrieval-augmented generation.",
+    "label": "INSUFFICIENT_EVIDENCE",
+    "split": "test"
+  },
+  {
+    "claim_id": "c51",
+    "claim": "ALCE reports a controlled user study comparing citation usefulness for novice and expert readers.",
+    "label": "INSUFFICIENT_EVIDENCE",
+    "split": "dev"
+  },
+  {
+    "claim_id": "c52",
+    "claim": "FActScore reports expected calibration error for its factuality predictions.",
+    "label": "INSUFFICIENT_EVIDENCE",
+    "split": "test"
+  },
+  {
+    "claim_id": "c53",
+    "claim": "SciFact records annotator confidence using a five-point confidence scale.",
+    "label": "INSUFFICIENT_EVIDENCE",
+    "split": "dev"
+  },
+  {
+    "claim_id": "c54",
+    "claim": "SciFact-Open evaluates cross-lingual scientific claim verification.",
+    "label": "INSUFFICIENT_EVIDENCE",
+    "split": "test"
+  },
+  {
+    "claim_id": "c55",
+    "claim": "FEVER includes audio and video evidence in addition to textual evidence.",
+    "label": "INSUFFICIENT_EVIDENCE",
+    "split": "dev"
+  },
+  {
+    "claim_id": "c56",
+    "claim": "SPECTER is evaluated on scientific author-disambiguation as a downstream task.",
+    "label": "INSUFFICIENT_EVIDENCE",
+    "split": "test"
+  },
+  {
+    "claim_id": "c57",
+    "claim": "SciNCL reports zero-shot retrieval results on patent documents.",
+    "label": "INSUFFICIENT_EVIDENCE",
+    "split": "dev"
+  },
+  {
+    "claim_id": "c58",
+    "claim": "S2ORC includes peer-review scores and reviewer comments for every indexed paper.",
+    "label": "INSUFFICIENT_EVIDENCE",
+    "split": "test"
+  },
+  {
+    "claim_id": "c59",
+    "claim": "Longformer is evaluated on source-code summarization benchmarks.",
+    "label": "INSUFFICIENT_EVIDENCE",
+    "split": "dev"
+  },
+  {
+    "claim_id": "c60",
+    "claim": "Lost in the Middle includes experiments on long-context automatic speech recognition.",
+    "label": "INSUFFICIENT_EVIDENCE",
+    "split": "test"
+  }
+]

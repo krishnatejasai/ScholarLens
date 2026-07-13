@@ -1,0 +1,57 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# IDE settings
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# Model and framework caches
+.cache/
+huggingface/
+wandb/
+
+# Raw copyrighted research papers
+data/raw_papers/*.pdf
+
+# Reproducible generated data
+data/processed/
+
+# Generated vector indexes
+outputs/index/
+
+# Temporary or query-specific outputs
+outputs/answers/
+outputs/retrieval/
+outputs/verification/
+
+# Keep benchmark reports and figures
+!outputs/evaluation/
+!outputs/evaluation/**
+!outputs/figures/
+!outputs/figures/**
+!outputs/reports/
+!outputs/reports/**

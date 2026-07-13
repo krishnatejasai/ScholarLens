@@ -1,0 +1,1856 @@
+{
+  "project": "ScholarLens AI",
+  "evaluation_type": "three-way scientific claim verification",
+  "labels": [
+    "SUPPORTED",
+    "CONTRADICTED",
+    "INSUFFICIENT_EVIDENCE"
+  ],
+  "overall": {
+    "total_claims": 60,
+    "accuracy": 0.75,
+    "macro_f1": 0.7489473684210526,
+    "classification_report": {
+      "SUPPORTED": {
+        "precision": 1.0,
+        "recall": 0.6,
+        "f1-score": 0.75,
+        "support": 20.0
+      },
+      "CONTRADICTED": {
+        "precision": 0.6333333333333333,
+        "recall": 0.95,
+        "f1-score": 0.76,
+        "support": 20.0
+      },
+      "INSUFFICIENT_EVIDENCE": {
+        "precision": 0.7777777777777778,
+        "recall": 0.7,
+        "f1-score": 0.7368421052631579,
+        "support": 20.0
+      },
+      "accuracy": 0.75,
+      "macro avg": {
+        "precision": 0.8037037037037037,
+        "recall": 0.75,
+        "f1-score": 0.7489473684210526,
+        "support": 60.0
+      },
+      "weighted avg": {
+        "precision": 0.8037037037037037,
+        "recall": 0.75,
+        "f1-score": 0.7489473684210526,
+        "support": 60.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        12,
+        5,
+        3
+      ],
+      [
+        0,
+        19,
+        1
+      ],
+      [
+        0,
+        6,
+        14
+      ]
+    ]
+  },
+  "development": {
+    "total_claims": 30,
+    "accuracy": 0.7666666666666667,
+    "macro_f1": 0.7662141779788839,
+    "classification_report": {
+      "SUPPORTED": {
+        "precision": 1.0,
+        "recall": 0.7,
+        "f1-score": 0.8235294117647058,
+        "support": 10.0
+      },
+      "CONTRADICTED": {
+        "precision": 0.625,
+        "recall": 1.0,
+        "f1-score": 0.7692307692307693,
+        "support": 10.0
+      },
+      "INSUFFICIENT_EVIDENCE": {
+        "precision": 0.8571428571428571,
+        "recall": 0.6,
+        "f1-score": 0.7058823529411765,
+        "support": 10.0
+      },
+      "accuracy": 0.7666666666666667,
+      "macro avg": {
+        "precision": 0.8273809523809524,
+        "recall": 0.7666666666666666,
+        "f1-score": 0.7662141779788839,
+        "support": 30.0
+      },
+      "weighted avg": {
+        "precision": 0.8273809523809523,
+        "recall": 0.7666666666666667,
+        "f1-score": 0.7662141779788839,
+        "support": 30.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        7,
+        2,
+        1
+      ],
+      [
+        0,
+        10,
+        0
+      ],
+      [
+        0,
+        4,
+        6
+      ]
+    ]
+  },
+  "test": {
+    "total_claims": 30,
+    "accuracy": 0.7333333333333333,
+    "macro_f1": 0.7261904761904762,
+    "classification_report": {
+      "SUPPORTED": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1-score": 0.6666666666666666,
+        "support": 10.0
+      },
+      "CONTRADICTED": {
+        "precision": 0.6428571428571429,
+        "recall": 0.9,
+        "f1-score": 0.75,
+        "support": 10.0
+      },
+      "INSUFFICIENT_EVIDENCE": {
+        "precision": 0.7272727272727273,
+        "recall": 0.8,
+        "f1-score": 0.7619047619047619,
+        "support": 10.0
+      },
+      "accuracy": 0.7333333333333333,
+      "macro avg": {
+        "precision": 0.79004329004329,
+        "recall": 0.7333333333333334,
+        "f1-score": 0.7261904761904762,
+        "support": 30.0
+      },
+      "weighted avg": {
+        "precision": 0.7900432900432901,
+        "recall": 0.7333333333333333,
+        "f1-score": 0.7261904761904762,
+        "support": 30.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        5,
+        3,
+        2
+      ],
+      [
+        0,
+        9,
+        1
+      ],
+      [
+        0,
+        2,
+        8
+      ]
+    ]
+  },
+  "results": [
+    {
+      "claim_id": "c01",
+      "split": "dev",
+      "claim": "Dense Passage Retrieval uses separate learned encoders to represent questions and passages.",
+      "expected_label": "SUPPORTED",
+      "predicted_label": "CONTRADICTED",
+      "correct": false,
+      "support_score": 0.19692423939704895,
+      "contradiction_score": 0.994799017906189,
+      "decisive_evidence": {
+        "rank": 3,
+        "score": 0.6682361364364624,
+        "chunk_id": "paper_01_dpr_page_2_chunk_6",
+        "paper_id": "paper_01_dpr",
+        "title": "paper_01_dpr",
+        "filename": "paper_01_dpr.pdf",
+        "page_number": 2,
+        "text": "3 Dense Passage Retriever (DPR) We focus our research in this work on improving the retrieval component in open-domain QA. Given a collection of M text passages, the goal of our dense passage retriever (DPR) is to index all the passages in a low-dimensional and continuous space, such that it can retrieve efﬁciently the top k passages relevant to the input question for the reader at run-time. Note that M can be very large (e.g., 21 million passages in our experiments, described in Section 4.1) and k is usually small, such as 20–100. 3.1 Overview Our dense passage retriever (DPR) uses a dense encoder EP (·) which maps any text passage to a ddimensional real-valued vectors and builds an index for all the M passages that we will use for retrieval. 3The ideal size and boundary of a text passage are functions of both the retriever and reader.",
+        "dense_rank": 4,
+        "dense_score": 0.6682361364364624,
+        "rerank_score": 5.589386940002441,
+        "nli_scores": {
+          "entailment": 0.00016002677148208022,
+          "contradiction": 0.994799017906189,
+          "neutral": 0.005040994379669428
+        }
+      }
+    },
+    {
+      "claim_id": "c02",
+      "split": "test",
+      "claim": "ColBERT applies late interaction between contextualized query and document token embeddings.",
+      "expected_label": "SUPPORTED",
+      "predicted_label": "SUPPORTED",
+      "correct": true,
+      "support_score": 0.889624297618866,
+      "contradiction_score": 0.47935593128204346,
+      "decisive_evidence": {
+        "rank": 2,
+        "score": 0.6941736936569214,
+        "chunk_id": "paper_02_colbert_page_4_chunk_0",
+        "paper_id": "paper_02_colbert",
+        "title": "ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT",
+        "filename": "paper_02_colbert.pdf",
+        "page_number": 4,
+        "text": "Even though ColBERT’s late-interaction framework can be applied to a wide variety of architectures (e.g., CNNs, RNNs, transformers, etc.), we choose to focus this work on bi-directional transformerbased encoders (i.e., BERT) owing to their state-of-the-art eﬀectiveness yet very high computational cost. 3.1 Architecture Figure 3 depicts the general architecture of ColBERT, which comprises: (a) a query encoder fQ, (b) a document encoder fD, and (c) the late interaction mechanism. Given a query q and document d, fQ encodes q into a bag of ﬁxed-size embeddings Eq while fD encodes d into another bag Ed. Crucially, each embeddings in Eq and Ed is contextualized based on the other terms in q or d, respectively. We describe our BERT-based encoders in §3.2.",
+        "dense_rank": 1,
+        "dense_score": 0.6941736936569214,
+        "rerank_score": 6.0876922607421875,
+        "nli_scores": {
+          "entailment": 0.889624297618866,
+          "contradiction": 0.02532697468996048,
+          "neutral": 0.08504875749349594
+        }
+      }
+    },
+    {
+      "claim_id": "c03",
+      "split": "dev",
+      "claim": "Contriever learns dense retrieval representations using contrastive learning without relevance labels.",
+      "expected_label": "SUPPORTED",
+      "predicted_label": "INSUFFICIENT_EVIDENCE",
+      "correct": false,
+      "support_score": 0.005902403965592384,
+      "contradiction_score": 0.40791064500808716,
+      "decisive_evidence": {
+        "rank": 2,
+        "score": 0.5857031345367432,
+        "chunk_id": "paper_01_dpr_page_9_chunk_1",
+        "paper_id": "paper_01_dpr",
+        "title": "paper_01_dpr",
+        "filename": "paper_01_dpr.pdf",
+        "page_number": 9,
+        "text": "Using labeled pairs of queries and documents, discriminatively trained dense encoders have become popular recently (Yih et al., 2011; Huang et al., 2013; Gillick et al., 2019), with applications to cross-lingual document retrieval, ad relevance prediction, Web search and entity retrieval. Such approaches complement the sparse vector methods as they can potentially give high similarity scores to semantically relevant text pairs, even without exact token matching. The dense representation alone, however, is typically inferior to the sparse one. While not the focus of this work, dense representations from pretrained models, along with cross-attention mechanisms, have also been shown effective in passage or dialogue re-ranking tasks (Nogueira and Cho, 2019; Humeau et al., 2020).",
+        "dense_rank": 20,
+        "dense_score": 0.5857031345367432,
+        "rerank_score": 4.454789161682129,
+        "nli_scores": {
+          "entailment": 8.119147241814062e-05,
+          "contradiction": 0.40791064500808716,
+          "neutral": 0.5920081734657288
+        }
+      }
+    },
+    {
+      "claim_id": "c04",
+      "split": "test",
+      "claim": "GTR studies whether larger dual encoders generalize across retrieval domains.",
+      "expected_label": "SUPPORTED",
+      "predicted_label": "SUPPORTED",
+      "correct": true,
+      "support_score": 0.9830495715141296,
+      "contradiction_score": 0.002386524574831128,
+      "decisive_evidence": {
+        "rank": 2,
+        "score": 0.720510721206665,
+        "chunk_id": "paper_04_gtr_page_2_chunk_1",
+        "paper_id": "paper_04_gtr",
+        "title": "paper_04_gtr",
+        "filename": "paper_04_gtr.pdf",
+        "page_number": 2,
+        "text": "Following Ni et al. (2021), we build dual encoders by taking the encoder part of T5. For effectively using the power of large models, we collect roughly two billion community question-answer pairs as generic pre-training data. By combining pre-training using generic training data and ﬁne-tuning using MS Marco (Nguyen et al., 2016), we are able to train large-scale dual encoder retrieval models. We call the resulting models Generalizable T5-based dense Retrievers (GTR). We evaluate the zero-shot performance of GTR on the BEIR benchmark (Thakur et al., 2021), which consists of 18 selected information retrieval tasks across 9 domains.2 Our results show that, surprisingly, scaling up of dual encoders leads to better generalizability despite the ﬁxed bottleneck embedding dimension.",
+        "dense_rank": 6,
+        "dense_score": 0.720510721206665,
+        "rerank_score": 6.5545334815979,
+        "nli_scores": {
+          "entailment": 0.9830495715141296,
+          "contradiction": 0.00021500789443962276,
+          "neutral": 0.016735373064875603
+        }
+      }
+    },
+    {
+      "claim_id": "c05",
+      "split": "dev",
+      "claim": "REALM retrieves external documents during language-model pretraining.",
+      "expected_label": "SUPPORTED",
+      "predicted_label": "SUPPORTED",
+      "correct": true,
+      "support_score": 0.9967057108879089,
+      "contradiction_score": 0.058677997440099716,
+      "decisive_evidence": {
+        "rank": 1,
+        "score": 0.7316449284553528,
+        "chunk_id": "paper_05_realm_page_2_chunk_0",
+        "paper_id": "paper_05_realm",
+        "title": "paper_05_realm",
+        "filename": "paper_05_realm.pdf",
+        "page_number": 2,
+        "text": "REALM: Retrieval-Augmented Language Model Pre-Training decide what knowledge to retrieve and use during inference. Before making each prediction, the language model uses the retriever to retrieve documents1 from a large corpus such as Wikipedia, and then attends over those documents to help inform its prediction. Learning this model end-toend requires backpropagating through a retrieval step that considers an entire corpus of textual knowledge, as shown in Figure 1. The key intuition of REALM is to train the retriever using a performance-based signal from unsupervised text: a retrieval that improves the language model’s perplexity is helpful and should be rewarded, while an uninformative retrieval should be penalized.",
+        "dense_rank": 1,
+        "dense_score": 0.7316449284553528,
+        "rerank_score": 7.160351753234863,
+        "nli_scores": {
+          "entailment": 0.9967057108879089,
+          "contradiction": 6.078386650187895e-05,
+          "neutral": 0.003233494469895959
+        }
+      }
+    },
+    {
+      "claim_id": "c06",
+      "split": "test",
+      "claim": "RAG combines parametric sequence-to-sequence memory with a non-parametric dense document index.",
+      "expected_label": "SUPPORTED",
+      "predicted_label": "INSUFFICIENT_EVIDENCE",
+      "correct": false,
+      "support_score": 0.495423287153244,
+      "contradiction_score": 0.013208775781095028,
+      "decisive_evidence": {
+        "rank": 1,
+        "score": 0.6207332015037537,
+        "chunk_id": "paper_06_rag_page_2_chunk_1",
+        "paper_id": "paper_06_rag",
+        "title": "paper_06_rag",
+        "filename": "paper_06_rag.pdf",
+        "page_number": 2,
+        "text": "For query x, we use Maximum Inner Product Search (MIPS) to ﬁnd the top-K documents zi. For ﬁnal prediction y, we treat z as a latent variable and marginalize over seq2seq predictions given different documents. but have only explored open-domain extractive question answering. Here, we bring hybrid parametric and non-parametric memory to the “workhorse of NLP,” i.e. sequence-to-sequence (seq2seq) models. We endow pre-trained, parametric-memory generation models with a non-parametric memory through a general-purpose ﬁne-tuning approach which we refer to as retrieval-augmented generation (RAG). We build RAG models where the parametric memory is a pre-trained seq2seq transformer, and the non-parametric memory is a dense vector index of Wikipedia, accessed with a pre-trained neural retriever. We combine these components in a probabilistic model trained end-to-end (Fig. 1).",
+        "dense_rank": 6,
+        "dense_score": 0.6207332015037537,
+        "rerank_score": 6.097212791442871,
+        "nli_scores": {
+          "entailment": 0.495423287153244,
+          "contradiction": 0.013208775781095028,
+          "neutral": 0.491367906332016
+        }
+      }
+    },
+    {
+      "claim_id": "c07",
+      "split": "dev",
+      "claim": "Atlas applies retrieval-augmented language models to few-shot learning.",
+      "expected_label": "SUPPORTED",
+      "predicted_label": "SUPPORTED",
+      "correct": true,
+      "support_score": 0.997248113155365,
+      "contradiction_score": 0.03996988385915756,
+      "decisive_evidence": {
+        "rank": 1,
+        "score": 0.7934467792510986,
+        "chunk_id": "paper_07_atlas_page_2_chunk_1",
+        "paper_id": "paper_07_atlas",
+        "title": "paper_07_atlas",
+        "filename": "paper_07_atlas.pdf",
+        "page_number": 2,
+        "text": "In this work we address this gap, and present Atlas, a retrieval-augmented language model capable of strong few-shot learning, despite having lower parameter counts than other powerful recent few-shot learners. Atlas retrieves relevant documents based on the current context by using a general-purpose dense retriever using a dual-encoder architecture, based on the Contriever (Izacard et al., 2022). The retrieved documents are processed, along with the current context, by a sequence-to-sequence model using the Fusion-in-Decoder architecture (Izacard & Grave, 2020) that generates the corresponding output. We study the impact of diﬀerent techniques to train Atlas on its few-shot performance on a range of downstream tasks, including question answering and fact checking.",
+        "dense_rank": 2,
+        "dense_score": 0.7934467792510986,
+        "rerank_score": 8.210861206054688,
+        "nli_scores": {
+          "entailment": 0.997248113155365,
+          "contradiction": 0.0002650271635502577,
+          "neutral": 0.0024869281332939863
+        }
+      }
+    },
+    {
+      "claim_id": "c08",
+      "split": "test",
+      "claim": "Self-RAG uses reflection mechanisms to retrieve, generate, and critique outputs.",
+      "expected_label": "SUPPORTED",
+      "predicted_label": "SUPPORTED",
+      "correct": true,
+      "support_score": 0.9974484443664551,
+      "contradiction_score": 0.013969020918011665,
+      "decisive_evidence": {
+        "rank": 2,
+        "score": 0.6896024942398071,
+        "chunk_id": "paper_08_self_rag_page_3_chunk_6",
+        "paper_id": "paper_08_self_rag",
+        "title": "paper_08_self_rag",
+        "filename": "paper_08_self_rag.pdf",
+        "page_number": 3,
+        "text": "SELF-RAG is a framework that enhances the quality and factuality of an LLM through retrieval and self-reflection, without sacrificing LLM’s original creativity and versatility. Our end-to-end training lets an LM M generate text informed by retrieved passages, if needed, and criticize the output by learning to generate special tokens. These reflection tokens (Table 1) signal the need for retrieval or confirm the output’s relevance, support, or completeness. In contrast, common RAG approaches retrieve passages indiscriminately, without ensuring complete support from cited sources.",
+        "dense_rank": 3,
+        "dense_score": 0.6896024942398071,
+        "rerank_score": 7.51747465133667,
+        "nli_scores": {
+          "entailment": 0.9974484443664551,
+          "contradiction": 8.286804222734645e-05,
+          "neutral": 0.0024687026161700487
+        }
+      }
+    },
+    {
+      "claim_id": "c09",
+      "split": "dev",
+      "claim": "CRAG evaluates retrieved documents and can trigger corrective retrieval actions.",
+      "expected_label": "SUPPORTED",
+      "predicted_label": "SUPPORTED",
+      "correct": true,
+      "support_score": 0.9968885779380798,
+      "contradiction_score": 0.03460957109928131,
+      "decisive_evidence": {
+        "rank": 2,
+        "score": 0.6590173244476318,
+        "chunk_id": "paper_09_crag_page_2_chunk_1",
+        "paper_id": "paper_09_crag",
+        "title": "paper_09_crag",
+        "filename": "paper_09_crag.pdf",
+        "page_number": 2,
+        "text": "On account of the above issues, this paper particularly studies the scenarios where the retriever returns inaccurate results. A method named Corrective Retrieval-Augmented Generation (CRAG) is proposed to self-correct the results of retriever and improve the utilization of documents for augmenting generation. A lightweight retrieval evaluator is designed to assess the overall quality of retrieved documents for a query. This serves as a crucial component in RAG, contributing to informative generation by reviewing and evaluating the relevance and reliability of the retrieved documents. A confidence degree is quantified based on which different knowledge retrieval actions of {Correct, Incorrect, Ambiguous} can be triggered.",
+        "dense_rank": 3,
+        "dense_score": 0.6590173244476318,
+        "rerank_score": 7.773141860961914,
+        "nli_scores": {
+          "entailment": 0.9968885779380798,
+          "contradiction": 9.42992846830748e-05,
+          "neutral": 0.0030170204117894173
+        }
+      }
+    },
+    {
+      "claim_id": "c10",
+      "split": "test",
+      "claim": "RAGAS provides reference-free metrics for evaluating retrieval-augmented generation pipelines.",
+      "expected_label": "SUPPORTED",
+      "predicted_label": "CONTRADICTED",
+      "correct": false,
+      "support_score": 0.9846345782279968,
+      "contradiction_score": 0.9996731281280518,
+      "decisive_evidence": {
+        "rank": 2,
+        "score": 0.6327585577964783,
+        "chunk_id": "paper_10_ragas_page_1_chunk_5",
+        "paper_id": "paper_10_ragas",
+        "title": "paper_10_ragas",
+        "filename": "paper_10_ragas.pdf",
+        "page_number": 1,
+        "text": "While the usefulness of retrieval-augmented strategies is clear, their implementation requires a significant amount of tuning, as the overall performance will be affected by the retrieval model, the considered corpus, the LM, or the prompt formulation, among others. Automated evaluation of retrieval-augmented systems is thus paramount. In practice, RAG systems are often evaluated in terms of the language modelling task itself, i.e. by measuring perplexity on some reference corpus. However, such evaluations are not always predictive of downstream performance (Wang et al., 2023c). Moreover, this evaluation strategy relies on the LM probabilities, which are not accessible for some closed models (e.g. ChatGPT and GPT-4).",
+        "dense_rank": 9,
+        "dense_score": 0.6327585577964783,
+        "rerank_score": 3.6671924591064453,
+        "nli_scores": {
+          "entailment": 1.6237741874647327e-05,
+          "contradiction": 0.9996731281280518,
+          "neutral": 0.0003106270742136985
+        }
+      }
+    },
+    {
+      "claim_id": "c11",
+      "split": "dev",
+      "claim": "ALCE studies how language models can generate answers with verifiable citations.",
+      "expected_label": "SUPPORTED",
+      "predicted_label": "CONTRADICTED",
+      "correct": false,
+      "support_score": 0.9789945483207703,
+      "contradiction_score": 0.9998866319656372,
+      "decisive_evidence": {
+        "rank": 3,
+        "score": 0.6555332541465759,
+        "chunk_id": "paper_11_alce_page_9_chunk_2",
+        "paper_id": "paper_11_alce",
+        "title": "paper_11_alce",
+        "filename": "paper_11_alce.pdf",
+        "page_number": 9,
+        "text": "7 Related Work Evaluating citations. Generating text with citations is closely related to attribution. Rashkin et al. (2023) define the “attributable to identified sources” (AIS) score to measure how faithful a generated text is to its sources. Bohnet et al. (2022) apply AIS scores on a single-document short-answer QA dataset. Honovich et al. (2022); Yue et al. (2023) study automatic evaluations for the AIS score. A concurrent work (Liu et al., 2023) conduct human evaluation on commercial generative search engines to examine their citation qualities. Scientific citation text generation (Funkquist et al., 2022) is a related task to ALCE where the model is provided the papers-to-cite and context and is required to recover the citing text. It is different from ALCE as all citations are provided and the model only needs to perform the summarization. Retrieval-augmented LMs.",
+        "dense_rank": 4,
+        "dense_score": 0.6555332541465759,
+        "rerank_score": 3.702637195587158,
+        "nli_scores": {
+          "entailment": 6.936405952728819e-06,
+          "contradiction": 0.9998866319656372,
+          "neutral": 0.0001064151365426369
+        }
+      }
+    },
+    {
+      "claim_id": "c12",
+      "split": "test",
+      "claim": "FActScore decomposes long-form generations into atomic facts for factual-precision evaluation.",
+      "expected_label": "SUPPORTED",
+      "predicted_label": "CONTRADICTED",
+      "correct": false,
+      "support_score": 0.7872182130813599,
+      "contradiction_score": 0.9921926856040955,
+      "decisive_evidence": {
+        "rank": 4,
+        "score": 0.6318528056144714,
+        "chunk_id": "paper_09_crag_page_12_chunk_0",
+        "paper_id": "paper_09_crag",
+        "title": "paper_09_crag",
+        "filename": "paper_09_crag.pdf",
+        "page_number": 12,
+        "text": "Sewon Min, Kalpesh Krishna, Xinxi Lyu, Mike Lewis, Wen-tau Yih, Pang Wei Koh, Mohit Iyyer, Luke Zettlemoyer, and Hannaneh Hajishirzi. 2023. Factscore: Fine-grained atomic evaluation of factual precision in long form text generation. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, EMNLP 2023, Singapore, December 6-10, 2023, pages 12076– 12100. Association for Computational Linguistics. Dor Muhlgay, Ori Ram, Inbal Magar, Yoav Levine, Nir Ratner, Yonatan Belinkov, Omri Abend, Kevin Leyton-Brown, Amnon Shashua, and Yoav Shoham. 2023. Generating benchmarks for factuality evaluation of language models. CoRR, abs/2307.06908. Deepak Narayanan, Mohammad Shoeybi, Jared Casper, Patrick LeGresley, Mostofa Patwary, Vijay Korthikanti, Dmitri Vainbrand, Prethvi Kashinkunti, Julie Bernauer, Bryan Catanzaro, Amar Phanishayee, and Matei Zaharia. 2021.",
+        "dense_rank": 9,
+        "dense_score": 0.6318528056144714,
+        "rerank_score": 5.519876480102539,
+        "nli_scores": {
+          "entailment": 0.004526830278337002,
+          "contradiction": 0.9921926856040955,
+          "neutral": 0.0032804037909954786
+        }
+      }
+    },
+    {
+      "claim_id": "c13",
+      "split": "dev",
+      "claim": "SciFact contains scientific claims with supporting or refuting evidence and rationales.",
+      "expected_label": "SUPPORTED",
+      "predicted_label": "SUPPORTED",
+      "correct": true,
+      "support_score": 0.9973805546760559,
+      "contradiction_score": 0.00012904324103146791,
+      "decisive_evidence": {
+        "rank": 2,
+        "score": 0.6693471074104309,
+        "chunk_id": "paper_13_scifact_page_2_chunk_2",
+        "paper_id": "paper_13_scifact",
+        "title": "paper_13_scifact",
+        "filename": "paper_13_scifact.pdf",
+        "page_number": 2,
+        "text": "Table 1: Evidence identiﬁed by our system as supporting and refuting two claims concerning COVID-19. system must have the ability to access scientiﬁc background knowledge, reason over increases and decreases in quantities or measurements, and make sense of specialized statistical language. In this paper, we introduce the task of scientiﬁc claim veriﬁcation to evaluate the veracity of scientiﬁc claims against a scientiﬁc corpus. Table 1 presents some examples. To facilitate research on this task, we construct SCIFACT, an expert-annotated dataset of 1,409 scientiﬁc claims accompanied by abstracts that support or refute each claim, and annotated with rationales (Lei et al., 2016) justifying each SUPPORTS / REFUTES decision.",
+        "dense_rank": 4,
+        "dense_score": 0.6693471074104309,
+        "rerank_score": 7.621300220489502,
+        "nli_scores": {
+          "entailment": 0.9973805546760559,
+          "contradiction": 7.482911314582452e-05,
+          "neutral": 0.002544597489759326
+        }
+      }
+    },
+    {
+      "claim_id": "c14",
+      "split": "test",
+      "claim": "SciFact-Open evaluates scientific claim verification over a substantially larger open-domain corpus.",
+      "expected_label": "SUPPORTED",
+      "predicted_label": "SUPPORTED",
+      "correct": true,
+      "support_score": 0.9573896527290344,
+      "contradiction_score": 0.0006134072318673134,
+      "decisive_evidence": {
+        "rank": 1,
+        "score": 0.810059666633606,
+        "chunk_id": "paper_14_scifact_open_page_1_chunk_1",
+        "paper_id": "paper_14_scifact_open",
+        "title": "paper_14_scifact_open",
+        "filename": "paper_14_scifact_open.pdf",
+        "page_number": 1,
+        "text": "Moving to this open-domain evaluation setting, however, poses unique challenges; in particular, it is infeasible to exhaustively annotate all evidence documents. In this work, we present SCIFACTOPEN, a new test collection designed to evaluate the performance of scientiﬁc claim veriﬁcation systems on a corpus of 500K research abstracts. Drawing upon pooling techniques from information retrieval, we collect evidence for scientiﬁc claims by pooling and annotating the top predictions of four stateof-the-art scientiﬁc claim veriﬁcation models. We ﬁnd that systems developed on smaller corpora struggle to generalize to SCIFACT-OPEN, exhibiting performance drops of at least 15 F1.",
+        "dense_rank": 3,
+        "dense_score": 0.810059666633606,
+        "rerank_score": 6.068831920623779,
+        "nli_scores": {
+          "entailment": 0.9573896527290344,
+          "contradiction": 0.0006134072318673134,
+          "neutral": 0.04199690371751785
+        }
+      }
+    },
+    {
+      "claim_id": "c15",
+      "split": "dev",
+      "claim": "FEVER includes supported, refuted, and not-enough-information claim labels.",
+      "expected_label": "SUPPORTED",
+      "predicted_label": "SUPPORTED",
+      "correct": true,
+      "support_score": 0.9959976673126221,
+      "contradiction_score": 0.0036284455563873053,
+      "decisive_evidence": {
+        "rank": 3,
+        "score": 0.506797194480896,
+        "chunk_id": "paper_06_rag_page_18_chunk_3",
+        "paper_id": "paper_06_rag",
+        "title": "paper_06_rag",
+        "filename": "paper_06_rag.pdf",
+        "page_number": 18,
+        "text": "We report results on both test sets to enable fair comparison to both approaches. We ﬁnd that our performance is much higher using the ofﬁcial Wiki test set, rather than the more conventional open-domain test set, which we attribute to the ofﬁcial Wiki test set questions being simpler to answer from Wikipedia. E Further Details on FEVER For FEVER classiﬁcation, we follow the practice from [32], and ﬁrst re-generate the claim, and then classify using the representation of the ﬁnal hidden state, before ﬁnally marginalizing across documents to obtain the class probabilities. The FEVER task traditionally has two sub-tasks. The ﬁrst is to classify the claim as either \"Supported\", \"Refuted\" or \"Not Enough Info\", which is the task we explore in the main paper. FEVER’s other sub-task involves extracting sentences from Wikipedia as evidence supporting the classiﬁcation prediction.",
+        "dense_rank": 12,
+        "dense_score": 0.506797194480896,
+        "rerank_score": 3.219139575958252,
+        "nli_scores": {
+          "entailment": 0.9959976673126221,
+          "contradiction": 0.00021479761926457286,
+          "neutral": 0.003787543624639511
+        }
+      }
+    },
+    {
+      "claim_id": "c16",
+      "split": "test",
+      "claim": "SPECTER uses citation information to learn scientific document representations.",
+      "expected_label": "SUPPORTED",
+      "predicted_label": "CONTRADICTED",
+      "correct": false,
+      "support_score": 0.9948217868804932,
+      "contradiction_score": 0.9987329840660095,
+      "decisive_evidence": {
+        "rank": 1,
+        "score": 0.6203488707542419,
+        "chunk_id": "paper_16_specter_page_1_chunk_5",
+        "paper_id": "paper_16_specter",
+        "title": "paper_16_specter",
+        "filename": "paper_16_specter.pdf",
+        "page_number": 1,
+        "text": "In this paper, we introduce a new method for learning general-purpose vector representations of scientiﬁc documents. Our system, SPECTER,2 incorporates inter-document context into the Transformer (Vaswani et al., 2017) language models (e.g., SciBERT (Beltagy et al., 2019)) to learn document representations that are effective across a wide-variety of downstream tasks, without the need for any task-speciﬁc ﬁne-tuning of the pretrained language model. We speciﬁcally use citations as a naturally occurring, inter-document incidental supervision signal indicating which documents are most related and formulate the signal into a triplet-loss pretraining objective. Unlike many prior works, at inference time, our model does not require any citation information. This is critical for embedding new papers that have not yet been cited.",
+        "dense_rank": 8,
+        "dense_score": 0.6203488707542419,
+        "rerank_score": 7.101658821105957,
+        "nli_scores": {
+          "entailment": 0.0006262741517275572,
+          "contradiction": 0.9987329840660095,
+          "neutral": 0.0006408091867342591
+        }
+      }
+    },
+    {
+      "claim_id": "c17",
+      "split": "dev",
+      "claim": "SciNCL uses neighborhood-based contrastive learning for scientific paper embeddings.",
+      "expected_label": "SUPPORTED",
+      "predicted_label": "SUPPORTED",
+      "correct": true,
+      "support_score": 0.9949212670326233,
+      "contradiction_score": 0.9829190969467163,
+      "decisive_evidence": {
+        "rank": 2,
+        "score": 0.7289754152297974,
+        "chunk_id": "paper_17_scincl_page_2_chunk_2",
+        "paper_id": "paper_17_scincl",
+        "title": "paper_17_scincl",
+        "filename": "paper_17_scincl.pdf",
+        "page_number": 2,
+        "text": "The citation embeddings, which incorporate the full citation graph, provide a continuous, undirected, and less noisy similarity signal that allows the generations of arbitrary difﬁcult-to-learn positive and negative samples. Contributions: • We propose neighborhood contrastive learning for scientiﬁc document representations with citation graph embeddings (SciNCL) based on contrastive learning theory insights. • We sample positive (similar) and negative (dissimilar) papers from the k nearest neighbors in the citation graph embedding space, such that positives and negatives do not collide but are also hard to learn. • We compare against the state-of-the-art approach SPECTER (Cohan et al., 2020) and other strong methods on the SCIDOCS benchmark and ﬁnd that SciNCL outperforms SPECTER on average and on 9 of 12",
+        "dense_rank": 3,
+        "dense_score": 0.7289754152297974,
+        "rerank_score": 7.4822540283203125,
+        "nli_scores": {
+          "entailment": 0.9949212670326233,
+          "contradiction": 3.684682087623514e-05,
+          "neutral": 0.005041885189712048
+        }
+      }
+    },
+    {
+      "claim_id": "c18",
+      "split": "test",
+      "claim": "S2ORC provides structured scholarly text, metadata, citations, and bibliographic information.",
+      "expected_label": "SUPPORTED",
+      "predicted_label": "SUPPORTED",
+      "correct": true,
+      "support_score": 0.9975099563598633,
+      "contradiction_score": 0.0012302793329581618,
+      "decisive_evidence": {
+        "rank": 5,
+        "score": 0.6281468868255615,
+        "chunk_id": "paper_18_s2orc_page_1_chunk_0",
+        "paper_id": "paper_18_s2orc",
+        "title": "paper_18_s2orc",
+        "filename": "paper_18_s2orc.pdf",
+        "page_number": 1,
+        "text": "S2ORC: The Semantic Scholar Open Research Corpus Kyle Lo†∗ Lucy Lu Wang†∗ Mark Neumann† Rodney Kinney† Daniel S. Weld†‡ †Allen Institute for Artiﬁcial Intelligence ‡Paul G. Allen School of Computer Science & Engineering, University of Washington {kylel, lucyw}@allenai.org Abstract We introduce S2ORC,1 a large corpus of 81.1M English-language academic papers spanning many academic disciplines. The corpus consists of rich metadata, paper abstracts, resolved bibliographic references, as well as structured full text for 8.1M open access papers. Full text is annotated with automaticallydetected inline mentions of citations, ﬁgures, and tables, each linked to their corresponding paper objects.",
+        "dense_rank": 15,
+        "dense_score": 0.6281468868255615,
+        "rerank_score": 7.238582134246826,
+        "nli_scores": {
+          "entailment": 0.9975099563598633,
+          "contradiction": 6.916998972883448e-05,
+          "neutral": 0.0024208487011492252
+        }
+      }
+    },
+    {
+      "claim_id": "c19",
+      "split": "dev",
+      "claim": "Longformer uses attention patterns whose computational cost scales linearly with sequence length.",
+      "expected_label": "SUPPORTED",
+      "predicted_label": "SUPPORTED",
+      "correct": true,
+      "support_score": 0.9964829683303833,
+      "contradiction_score": 0.001361184287816286,
+      "decisive_evidence": {
+        "rank": 1,
+        "score": 0.7119056582450867,
+        "chunk_id": "paper_19_longformer_page_1_chunk_3",
+        "paper_id": "paper_19_longformer",
+        "title": "paper_19_longformer",
+        "filename": "paper_19_longformer.pdf",
+        "page_number": 1,
+        "text": "While powerful, the memory and computational requirements of self-attention grow ∗Equal contribution. 1https://github.com/allenai/longformer Figure 1: Runtime and memory of full selfattention and different implementations of Longformer’s self-attention; Longformer-loop is nonvectorized, Longformer-chunk is vectorized, and Longformer-cuda is a custom cuda kernel implementations. Longformer’s memory usage scales linearly with the sequence length, unlike the full self-attention mechanism that runs out of memory for long sequences on current GPUs. Different implementations vary in speed, with the vectorized Longformer-chunk being the fastest. More details are in section 3.2. quadratically with sequence length, making it infeasible (or very expensive) to process long sequences.",
+        "dense_rank": 1,
+        "dense_score": 0.7119056582450867,
+        "rerank_score": 6.692329406738281,
+        "nli_scores": {
+          "entailment": 0.9964829683303833,
+          "contradiction": 0.00018410233315080404,
+          "neutral": 0.003332840744405985
+        }
+      }
+    },
+    {
+      "claim_id": "c20",
+      "split": "test",
+      "claim": "Lost in the Middle reports weaker performance when relevant information appears in the middle of long contexts.",
+      "expected_label": "SUPPORTED",
+      "predicted_label": "INSUFFICIENT_EVIDENCE",
+      "correct": false,
+      "support_score": 0.12232087552547455,
+      "contradiction_score": 0.0006225897232070565,
+      "decisive_evidence": {
+        "rank": 5,
+        "score": 0.45268237590789795,
+        "chunk_id": "paper_20_lost_in_middle_page_1_chunk_5",
+        "paper_id": "paper_20_lost_in_middle",
+        "title": "paper_20_lost_in_middle",
+        "filename": "paper_20_lost_in_middle.pdf",
+        "page_number": 1,
+        "text": "1st 5th 10th 15th 20th Position of Document with the Answer 55 60 65 70 75 Accuracy 20 Total Retrieved Documents (~4K tokens) gpt-3.5-turbo-0613 gpt-3.5-turbo-0613 (closed-book) Figure 1: Changing the location of relevant information (in this case, the position of the passage that answers an input question) within the language model’s input context results in a U-shaped performance curve—models are better at using relevant information that occurs at the very beginning (primacy bias) or end of its input context (recency bias), and performance degrades significantly when models must access and use information located in the middle of its input context. relevant documents from a search engine, database query results, etc; Petroni et al., 2020; Ram et al., 2023; Shi et al., 2023; Mallen et al., 2023; Schick et al., 2023, inter alia).",
+        "dense_rank": 6,
+        "dense_score": 0.45268237590789795,
+        "rerank_score": 1.15748929977417,
+        "nli_scores": {
+          "entailment": 0.12232087552547455,
+          "contradiction": 0.0003196820616722107,
+          "neutral": 0.8773593902587891
+        }
+      }
+    },
+    {
+      "claim_id": "c21",
+      "split": "dev",
+      "claim": "Dense Passage Retrieval relies exclusively on BM25 and does not use neural encoders.",
+      "expected_label": "CONTRADICTED",
+      "predicted_label": "CONTRADICTED",
+      "correct": true,
+      "support_score": 0.00023644391330890357,
+      "contradiction_score": 0.9999672174453735,
+      "decisive_evidence": {
+        "rank": 2,
+        "score": 0.5972757339477539,
+        "chunk_id": "paper_01_dpr_page_1_chunk_7",
+        "paper_id": "paper_01_dpr",
+        "title": "paper_01_dpr",
+        "filename": "paper_01_dpr.pdf",
+        "page_number": 1,
+        "text": "The question encoder and the reader model are then ﬁnetuned using pairs of questions and answers jointly. Although ORQA successfully demonstrates that dense retrieval can outperform BM25, setting new state-of-the-art results on multiple open-domain arXiv:2004.04906v3 [cs.CL] 30 Sep 2020",
+        "dense_rank": 2,
+        "dense_score": 0.5972757339477539,
+        "rerank_score": 4.419805526733398,
+        "nli_scores": {
+          "entailment": 5.082917596155312e-06,
+          "contradiction": 0.9999672174453735,
+          "neutral": 2.7711708753486164e-05
+        }
+      }
+    },
+    {
+      "claim_id": "c22",
+      "split": "test",
+      "claim": "ColBERT requires a full cross-encoder computation for every document before retrieval.",
+      "expected_label": "CONTRADICTED",
+      "predicted_label": "CONTRADICTED",
+      "correct": true,
+      "support_score": 0.0007145584095269442,
+      "contradiction_score": 0.988933801651001,
+      "decisive_evidence": {
+        "rank": 5,
+        "score": 0.6188693046569824,
+        "chunk_id": "paper_02_colbert_page_9_chunk_7",
+        "paper_id": "paper_02_colbert",
+        "title": "ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT",
+        "filename": "paper_02_colbert.pdf",
+        "page_number": 9,
+        "text": "Table 4 reports the space footprint of ColBERT under various setings as we reduce the embeddings dimension and/or the bytes per dimension. Interestingly, the most space-eﬃcient seting, that is, re-ranking with cosine similarity with 24-dimensional vectors stored as 2-byte ﬂoats, is only 1% worse in MRR@10 than the most space-consuming one, while the former requires only 27 GiBs to represent the MS MARCO collection. 5 CONCLUSIONS In this paper, we introduced ColBERT, a novel ranking model that employs contextualized late interaction over deep LMs (in particular, BERT) for eﬃcient retrieval. By independently encoding queries and documents into ﬁne-grained representations that interact via cheap and pruning-friendly computations, ColBERT can leverage the expressiveness of deep LMs while greatly speeding up query processing.",
+        "dense_rank": 15,
+        "dense_score": 0.6188693046569824,
+        "rerank_score": 1.9027395248413086,
+        "nli_scores": {
+          "entailment": 2.2956335669732653e-05,
+          "contradiction": 0.988933801651001,
+          "neutral": 0.011043279431760311
+        }
+      }
+    },
+    {
+      "claim_id": "c23",
+      "split": "dev",
+      "claim": "Contriever requires manually labeled relevance judgments for all of its training examples.",
+      "expected_label": "CONTRADICTED",
+      "predicted_label": "CONTRADICTED",
+      "correct": true,
+      "support_score": 0.0006524522323161364,
+      "contradiction_score": 0.9991797804832458,
+      "decisive_evidence": {
+        "rank": 3,
+        "score": 0.5286479592323303,
+        "chunk_id": "paper_09_crag_page_4_chunk_3",
+        "paper_id": "paper_09_crag",
+        "title": "paper_09_crag",
+        "filename": "paper_09_crag.pdf",
+        "page_number": 4,
+        "text": "We also tried to prompt ChatGPT to identify the retrieval relevance for comparison, but it underperforms as elaborated in Section 5.5. Based on these calculated relevance scores, a final judgment is made as to whether the retrieval is correct or not associated with the action trigger. In our proposed framework, the retrieval quality is evaluated at a relatively low cost without the need to have access to large and expensive LLMs. Compared with the critic model of Self-RAG (Asai et al., 2024) that instructiontuned LLaMA-2 (7B), the evaluator designed in CRAG demonstrates the advantages of being quite lightweight (0.77B).",
+        "dense_rank": 8,
+        "dense_score": 0.5286479592323303,
+        "rerank_score": -4.20956563949585,
+        "nli_scores": {
+          "entailment": 1.0031338206317741e-05,
+          "contradiction": 0.9991797804832458,
+          "neutral": 0.0008102468564175069
+        }
+      }
+    },
+    {
+      "claim_id": "c24",
+      "split": "test",
+      "claim": "GTR concludes that increasing dual-encoder size consistently reduces cross-domain retrieval performance.",
+      "expected_label": "CONTRADICTED",
+      "predicted_label": "CONTRADICTED",
+      "correct": true,
+      "support_score": 0.0003134292783215642,
+      "contradiction_score": 0.9997157454490662,
+      "decisive_evidence": {
+        "rank": 3,
+        "score": 0.727825403213501,
+        "chunk_id": "paper_04_gtr_page_8_chunk_6",
+        "paper_id": "paper_04_gtr",
+        "title": "paper_04_gtr",
+        "filename": "paper_04_gtr.pdf",
+        "page_number": 8,
+        "text": "With the recent work towards making large models efﬁcient from angles such as sparsity, distillation and prompt-tuning, we hope the inference time for large dual encoders can be signiﬁcantly reduced in the future. 9 Conclusion This paper presents the Generalizable T5 Retriever (GTR), a scaled-up dual encoder model with a ﬁxed-size bottleneck layer. We show that scaling up the model size brings signiﬁcant improvement on retrieval performance across the board on the BEIR zero-shot retrieval benchmark, especially",
+        "dense_rank": 2,
+        "dense_score": 0.727825403213501,
+        "rerank_score": 4.111939430236816,
+        "nli_scores": {
+          "entailment": 6.209654384292662e-05,
+          "contradiction": 0.9997157454490662,
+          "neutral": 0.00022212429030332714
+        }
+      }
+    },
+    {
+      "claim_id": "c25",
+      "split": "dev",
+      "claim": "REALM stores all factual knowledge only in model parameters and never retrieves external documents.",
+      "expected_label": "CONTRADICTED",
+      "predicted_label": "CONTRADICTED",
+      "correct": true,
+      "support_score": 0.0007678218535147607,
+      "contradiction_score": 0.9998764991760254,
+      "decisive_evidence": {
+        "rank": 2,
+        "score": 0.5764133334159851,
+        "chunk_id": "paper_05_realm_page_2_chunk_0",
+        "paper_id": "paper_05_realm",
+        "title": "paper_05_realm",
+        "filename": "paper_05_realm.pdf",
+        "page_number": 2,
+        "text": "REALM: Retrieval-Augmented Language Model Pre-Training decide what knowledge to retrieve and use during inference. Before making each prediction, the language model uses the retriever to retrieve documents1 from a large corpus such as Wikipedia, and then attends over those documents to help inform its prediction. Learning this model end-toend requires backpropagating through a retrieval step that considers an entire corpus of textual knowledge, as shown in Figure 1. The key intuition of REALM is to train the retriever using a performance-based signal from unsupervised text: a retrieval that improves the language model’s perplexity is helpful and should be rewarded, while an uninformative retrieval should be penalized.",
+        "dense_rank": 2,
+        "dense_score": 0.5764133334159851,
+        "rerank_score": 2.7604761123657227,
+        "nli_scores": {
+          "entailment": 1.5287432688637637e-05,
+          "contradiction": 0.9998764991760254,
+          "neutral": 0.0001082258895621635
+        }
+      }
+    },
+    {
+      "claim_id": "c26",
+      "split": "test",
+      "claim": "RAG uses only parametric memory and does not access a document index.",
+      "expected_label": "CONTRADICTED",
+      "predicted_label": "CONTRADICTED",
+      "correct": true,
+      "support_score": 0.005812765099108219,
+      "contradiction_score": 0.9998639822006226,
+      "decisive_evidence": {
+        "rank": 5,
+        "score": 0.6164262890815735,
+        "chunk_id": "paper_06_rag_page_17_chunk_3",
+        "paper_id": "paper_06_rag",
+        "title": "paper_06_rag",
+        "filename": "paper_06_rag.pdf",
+        "page_number": 17,
+        "text": "This version is also open-sourced. We also compress the document index using FAISS’s compression tools, reducing the CPU memory requirement to 36GB. Scripts to run experiments with RAG can be found at https://github.com/huggingface/transformers/ blob/master/examples/rag/README.md and an interactive demo of a RAG model can be found at https://huggingface.co/rag/ 2https://github.com/pytorch/fairseq 3https://github.com/huggingface/transformers 17",
+        "dense_rank": 2,
+        "dense_score": 0.6164262890815735,
+        "rerank_score": 1.1510368585586548,
+        "nli_scores": {
+          "entailment": 1.624037577130366e-05,
+          "contradiction": 0.9998639822006226,
+          "neutral": 0.00011976736277574673
+        }
+      }
+    },
+    {
+      "claim_id": "c27",
+      "split": "dev",
+      "claim": "Atlas is designed exclusively for supervised learning with thousands of labeled examples.",
+      "expected_label": "CONTRADICTED",
+      "predicted_label": "CONTRADICTED",
+      "correct": true,
+      "support_score": 0.0077698384411633015,
+      "contradiction_score": 0.9998020529747009,
+      "decisive_evidence": {
+        "rank": 3,
+        "score": 0.43579423427581787,
+        "chunk_id": "paper_07_atlas_page_1_chunk_1",
+        "paper_id": "paper_07_atlas",
+        "title": "paper_07_atlas",
+        "filename": "paper_07_atlas.pdf",
+        "page_number": 1,
+        "text": "However, when knowledge is key for such results, as is the case for tasks such as question answering and fact checking, massive parameter counts to store knowledge seem to be needed. Retrieval augmented models are known to excel at knowledge intensive tasks without the need for as many parameters, but it is unclear whether they work in few-shot settings. In this work we present Atlas, a carefully designed and pre-trained retrieval augmented language model able to learn knowledge intensive tasks with very few training examples. We perform evaluations on a wide range of tasks, including MMLU, KILT and NaturalQuestions, and study the impact of the content of the document index, showing that it can easily be updated. Notably, Atlas reaches over 42% accuracy on Natural Questions using only 64 examples, outperforming a 540B parameters model by 3% despite having 50x fewer parameters.",
+        "dense_rank": 15,
+        "dense_score": 0.43579423427581787,
+        "rerank_score": 1.5316578149795532,
+        "nli_scores": {
+          "entailment": 1.4073706552153453e-05,
+          "contradiction": 0.9998020529747009,
+          "neutral": 0.0001838925963966176
+        }
+      }
+    },
+    {
+      "claim_id": "c28",
+      "split": "test",
+      "claim": "Self-RAG always retrieves documents and does not critique its generated responses.",
+      "expected_label": "CONTRADICTED",
+      "predicted_label": "CONTRADICTED",
+      "correct": true,
+      "support_score": 4.319274739827961e-05,
+      "contradiction_score": 0.9999380111694336,
+      "decisive_evidence": {
+        "rank": 5,
+        "score": 0.6254951357841492,
+        "chunk_id": "paper_08_self_rag_page_1_chunk_5",
+        "paper_id": "paper_08_self_rag",
+        "title": "paper_08_self_rag",
+        "filename": "paper_08_self_rag.pdf",
+        "page_number": 1,
+        "text": "Reflection tokens are categorized into retrieval and critique tokens to indicate the need for retrieval and its generation quality respectively (Figure 1 right). In particular, given an input prompt and preceding generations, SELF-RAG first determines if augmenting the continued generation with retrieved passages would be helpful. If so, it outputs a retrieval token that calls a retriever model on demand (Step 1). Subsequently, SELF-RAG concurrently processes multiple retrieved passages, evaluating their relevance and then generating corresponding task outputs (Step 2). It then generates critique tokens to criticize its own output and choose best one (Step 3) in terms of factuality and overall quality. This process differs from conventional RAG (Figure 1 left), which 1Our code and trained models are available at https://selfrag.github.io/. 1 arXiv:2310.11511v1 [cs.CL] 17 Oct 2023",
+        "dense_rank": 1,
+        "dense_score": 0.6254951357841492,
+        "rerank_score": 4.382851600646973,
+        "nli_scores": {
+          "entailment": 2.4935811779869255e-06,
+          "contradiction": 0.9999380111694336,
+          "neutral": 5.949836122454144e-05
+        }
+      }
+    },
+    {
+      "claim_id": "c29",
+      "split": "dev",
+      "claim": "CRAG assumes all retrieved passages are reliable and performs no retrieval-quality assessment.",
+      "expected_label": "CONTRADICTED",
+      "predicted_label": "CONTRADICTED",
+      "correct": true,
+      "support_score": 0.00010498863412067294,
+      "contradiction_score": 0.9998916387557983,
+      "decisive_evidence": {
+        "rank": 1,
+        "score": 0.4129277467727661,
+        "chunk_id": "paper_09_crag_page_2_chunk_1",
+        "paper_id": "paper_09_crag",
+        "title": "paper_09_crag",
+        "filename": "paper_09_crag.pdf",
+        "page_number": 2,
+        "text": "On account of the above issues, this paper particularly studies the scenarios where the retriever returns inaccurate results. A method named Corrective Retrieval-Augmented Generation (CRAG) is proposed to self-correct the results of retriever and improve the utilization of documents for augmenting generation. A lightweight retrieval evaluator is designed to assess the overall quality of retrieved documents for a query. This serves as a crucial component in RAG, contributing to informative generation by reviewing and evaluating the relevance and reliability of the retrieved documents. A confidence degree is quantified based on which different knowledge retrieval actions of {Correct, Incorrect, Ambiguous} can be triggered.",
+        "dense_rank": 11,
+        "dense_score": 0.4129277467727661,
+        "rerank_score": 4.351202964782715,
+        "nli_scores": {
+          "entailment": 1.4119616935204249e-05,
+          "contradiction": 0.9998916387557983,
+          "neutral": 9.431979560758919e-05
+        }
+      }
+    },
+    {
+      "claim_id": "c30",
+      "split": "test",
+      "claim": "RAGAS requires a gold reference answer for every metric it computes.",
+      "expected_label": "CONTRADICTED",
+      "predicted_label": "INSUFFICIENT_EVIDENCE",
+      "correct": false,
+      "support_score": 0.0023286081850528717,
+      "contradiction_score": 0.6206417083740234,
+      "decisive_evidence": {
+        "rank": 5,
+        "score": 0.37850385904312134,
+        "chunk_id": "paper_10_ragas_page_1_chunk_1",
+        "paper_id": "paper_10_ragas",
+        "title": "paper_10_ragas",
+        "filename": "paper_10_ragas.pdf",
+        "page_number": 1,
+        "text": "RAG systems are composed of a retrieval and an LLM based generation module, and provide LLMs with knowledge from a reference textual database, which enables them to act as a natural language layer between a user and textual databases, reducing the risk of hallucinations. Evaluating RAG architectures is, however, challenging because there are several dimensions to consider: the ability of the retrieval system to identify relevant and focused context passages, the ability of the LLM to exploit such passages in a faithful way, or the quality of the generation itself. With Ragas, we put forward a suite of metrics which can be used to evaluate these different dimensions without having to rely on ground truth human annotations. We posit that such a framework can crucially contribute to faster evaluation cycles of RAG architectures, which is especially important given the fast adoption of LLMs.",
+        "dense_rank": 18,
+        "dense_score": 0.37850385904312134,
+        "rerank_score": -1.1662602424621582,
+        "nli_scores": {
+          "entailment": 4.422001802595332e-05,
+          "contradiction": 0.6206417083740234,
+          "neutral": 0.3793140649795532
+        }
+      }
+    },
+    {
+      "claim_id": "c31",
+      "split": "dev",
+      "claim": "ALCE removes citations from generated answers because citations reduce factual reliability.",
+      "expected_label": "CONTRADICTED",
+      "predicted_label": "CONTRADICTED",
+      "correct": true,
+      "support_score": 0.00010425203799968585,
+      "contradiction_score": 0.9999134540557861,
+      "decisive_evidence": {
+        "rank": 3,
+        "score": 0.6301170587539673,
+        "chunk_id": "paper_11_alce_page_9_chunk_2",
+        "paper_id": "paper_11_alce",
+        "title": "paper_11_alce",
+        "filename": "paper_11_alce.pdf",
+        "page_number": 9,
+        "text": "7 Related Work Evaluating citations. Generating text with citations is closely related to attribution. Rashkin et al. (2023) define the “attributable to identified sources” (AIS) score to measure how faithful a generated text is to its sources. Bohnet et al. (2022) apply AIS scores on a single-document short-answer QA dataset. Honovich et al. (2022); Yue et al. (2023) study automatic evaluations for the AIS score. A concurrent work (Liu et al., 2023) conduct human evaluation on commercial generative search engines to examine their citation qualities. Scientific citation text generation (Funkquist et al., 2022) is a related task to ALCE where the model is provided the papers-to-cite and context and is required to recover the citing text. It is different from ALCE as all citations are provided and the model only needs to perform the summarization. Retrieval-augmented LMs.",
+        "dense_rank": 1,
+        "dense_score": 0.6301170587539673,
+        "rerank_score": 0.8596117496490479,
+        "nli_scores": {
+          "entailment": 4.543426257441752e-06,
+          "contradiction": 0.9999134540557861,
+          "neutral": 8.1983111158479e-05
+        }
+      }
+    },
+    {
+      "claim_id": "c32",
+      "split": "test",
+      "claim": "FActScore evaluates factuality without decomposing text into atomic facts.",
+      "expected_label": "CONTRADICTED",
+      "predicted_label": "CONTRADICTED",
+      "correct": true,
+      "support_score": 0.0002530895289964974,
+      "contradiction_score": 0.9999184608459473,
+      "decisive_evidence": {
+        "rank": 1,
+        "score": 0.747090756893158,
+        "chunk_id": "paper_12_factscore_page_1_chunk_7",
+        "paper_id": "paper_12_factscore",
+        "title": "paper_12_factscore",
+        "filename": "paper_12_factscore.pdf",
+        "page_number": 1,
+        "text": "In this paper, we introduce FACTSCORE (Factual precision in Atomicity Score), a new evaluation of an LM that represents the percentage of atomic facts (pieces of information) supported by a given knowledge source. Computing FACTSCORE involves (1) breaking a generation into a series of atomic facts—short statements that each contain one piece of information (Nenkova and Passonneau, 2004; Shapira et al., 2019; Zhang and Bansal, 2021; Liu et al., 2022), and (2) assigning a binary label 2Even a single sentence consists of multiple pieces of information (e.g., 4.4 per sentence in ChatGPT, 40% of which are a mixture of supported and unsupported information). arXiv:2305.14251v2 [cs.CL] 11 Oct 2023",
+        "dense_rank": 2,
+        "dense_score": 0.747090756893158,
+        "rerank_score": 5.625638008117676,
+        "nli_scores": {
+          "entailment": 1.0972087693517096e-05,
+          "contradiction": 0.9999184608459473,
+          "neutral": 7.060940697556362e-05
+        }
+      }
+    },
+    {
+      "claim_id": "c33",
+      "split": "dev",
+      "claim": "SciFact uses a single evidence label and does not distinguish support from refutation.",
+      "expected_label": "CONTRADICTED",
+      "predicted_label": "CONTRADICTED",
+      "correct": true,
+      "support_score": 6.365888111758977e-05,
+      "contradiction_score": 0.9998383522033691,
+      "decisive_evidence": {
+        "rank": 2,
+        "score": 0.6263427734375,
+        "chunk_id": "paper_13_scifact_page_5_chunk_0",
+        "paper_id": "paper_13_scifact",
+        "title": "paper_13_scifact",
+        "filename": "paper_13_scifact.pdf",
+        "page_number": 5,
+        "text": "Fold SUPPORTS NOINFO REFUTES All Train 332 304 173 809 Dev 124 112 64 300 Test 100 100 100 300 All 556 516 337 1409 (a) Distribution of claim labels in SCIFACT. 0 1 2 3+ Cited abstracts per claim 1278 86 45 Evidence abstracts per claim 516 830 37 26 Rationales per abstract 552 290 153 Sentences per rationale 1542 92 11 (b) Evidence counts at various levels of granularity. For example, Column 2 of the row “Rationales / abstract” indicates that 290 claim / abstract pairs are supported by 2 distinct rationales. Table 2: Statistics on claim labels, and the number of evidence abstracts and rationales per claim. The abstracts that either SUPPORT or REFUTE c are referred to as evidence abstracts for c, denoted as E(c). Each evidence abstract a ∈E(c) is annotated with rationales.",
+        "dense_rank": 2,
+        "dense_score": 0.6263427734375,
+        "rerank_score": 2.1426730155944824,
+        "nli_scores": {
+          "entailment": 4.09119893447496e-05,
+          "contradiction": 0.9998383522033691,
+          "neutral": 0.00012077673454768956
+        }
+      }
+    },
+    {
+      "claim_id": "c34",
+      "split": "test",
+      "claim": "SciFact-Open restricts verification to the same small fixed corpus used by the original SciFact benchmark.",
+      "expected_label": "CONTRADICTED",
+      "predicted_label": "CONTRADICTED",
+      "correct": true,
+      "support_score": 0.004145817365497351,
+      "contradiction_score": 0.999612033367157,
+      "decisive_evidence": {
+        "rank": 1,
+        "score": 0.6417932510375977,
+        "chunk_id": "paper_14_scifact_open_page_3_chunk_1",
+        "paper_id": "paper_14_scifact_open",
+        "title": "paper_14_scifact_open",
+        "filename": "paper_14_scifact_open.pdf",
+        "page_number": 3,
+        "text": "Annotators found evidence for 4 / 6 of these CAPS. Our goal is to construct a test collection which can be used to assess the performance of claim veriﬁcation systems deployed on a large corpus of scientiﬁc literature. This requires a collection of claims, a corpus of abstracts against which to verify them, and evidence annotations with which to evaluate system predictions. We use the claims from the SCIFACT-ORIG test set as our claims for SCIFACT-OPEN.2 To obtain evidence annotations, we use all evidence from SCIFACT-ORIG as evidence in our new dataset and collect additional evidence from the SCIFACT-OPEN corpus. For our corpus, we ﬁlter the S2ORC dataset (Lo et al., 2020) for all articles which (1) cover topics related to medicine or biology and (2) have at least one inbound and one outbound citation.",
+        "dense_rank": 9,
+        "dense_score": 0.6417932510375977,
+        "rerank_score": 1.741316318511963,
+        "nli_scores": {
+          "entailment": 1.0132442184840329e-05,
+          "contradiction": 0.999612033367157,
+          "neutral": 0.00037784999585710466
+        }
+      }
+    },
+    {
+      "claim_id": "c35",
+      "split": "dev",
+      "claim": "FEVER contains only supported claims and does not include refuted or unverifiable examples.",
+      "expected_label": "CONTRADICTED",
+      "predicted_label": "CONTRADICTED",
+      "correct": true,
+      "support_score": 0.00011106676538474858,
+      "contradiction_score": 0.9995341300964355,
+      "decisive_evidence": {
+        "rank": 4,
+        "score": 0.42573708295822144,
+        "chunk_id": "paper_15_fever_page_1_chunk_0",
+        "paper_id": "paper_15_fever",
+        "title": "paper_15_fever",
+        "filename": "paper_15_fever.pdf",
+        "page_number": 1,
+        "text": "FEVER: a large-scale dataset for Fact Extraction and VERiﬁcation James Thorne1, Andreas Vlachos1, Christos Christodoulopoulos2, and Arpit Mittal2 1Department of Computer Science, University of Shefﬁeld 2Amazon Research Cambridge {j.thorne, a.vlachos}@sheffield.ac.uk {chrchrs, mitarpit}@amazon.co.uk Abstract In this paper we introduce a new publicly available dataset for veriﬁcation against textual sources, FEVER: Fact Extraction and VERiﬁcation. It consists of 185,445 claims generated by altering sentences extracted from Wikipedia and subsequently veriﬁed without knowledge of the sentence they were derived from. The claims are classiﬁed as SUPPORTED, REFUTED or NOTENOUGHINFO by annotators achieving 0.6841 in Fleiss κ. For the ﬁrst two classes, the annotators also recorded the sentence(s) forming the necessary evidence for their judgment.",
+        "dense_rank": 12,
+        "dense_score": 0.42573708295822144,
+        "rerank_score": 3.6587467193603516,
+        "nli_scores": {
+          "entailment": 5.0253784138476476e-05,
+          "contradiction": 0.9995341300964355,
+          "neutral": 0.00041555287316441536
+        }
+      }
+    },
+    {
+      "claim_id": "c36",
+      "split": "test",
+      "claim": "SPECTER learns paper representations without using citation relationships.",
+      "expected_label": "CONTRADICTED",
+      "predicted_label": "CONTRADICTED",
+      "correct": true,
+      "support_score": 0.0012305541895329952,
+      "contradiction_score": 0.9998509883880615,
+      "decisive_evidence": {
+        "rank": 3,
+        "score": 0.6525647044181824,
+        "chunk_id": "paper_17_scincl_page_3_chunk_1",
+        "paper_id": "paper_17_scincl",
+        "title": "paper_17_scincl",
+        "filename": "paper_17_scincl.pdf",
+        "page_number": 3,
+        "text": "Aside from text, citations are a valuable signal for the similarity of research papers. Paper (node) representations can be learned using the citation graph (Wu et al., 2019; Perozzi et al., 2014; Grover and Leskovec, 2016). Especially for recommendations of papers or citations, hybrid combinations of text and citation features are often employed (Han et al., 2018; Jeong et al., 2020; Brochier et al., 2019; Yang et al., 2015; Holm et al., 2022). Closest to SciNCL are Citeomatic (Bhagavatula et al., 2018) and SPECTER (Cohan et al., 2020). While Citeomatic relies on bag-of-words for its textual features, SPECTER is based on SciBERT. Both leverage citations to learn a triplet-based document embedding model, whereby positive samples are papers cited in the query. Easy negatives are random papers not cited by the query.",
+        "dense_rank": 7,
+        "dense_score": 0.6525647044181824,
+        "rerank_score": 5.508821964263916,
+        "nli_scores": {
+          "entailment": 1.3429510545392986e-05,
+          "contradiction": 0.9998509883880615,
+          "neutral": 0.00013549206778407097
+        }
+      }
+    },
+    {
+      "claim_id": "c37",
+      "split": "dev",
+      "claim": "SciNCL selects positive and negative papers randomly without neighborhood information.",
+      "expected_label": "CONTRADICTED",
+      "predicted_label": "CONTRADICTED",
+      "correct": true,
+      "support_score": 0.01044313795864582,
+      "contradiction_score": 0.9997641444206238,
+      "decisive_evidence": {
+        "rank": 2,
+        "score": 0.49861443042755127,
+        "chunk_id": "paper_17_scincl_page_2_chunk_3",
+        "paper_id": "paper_17_scincl",
+        "title": "paper_17_scincl",
+        "filename": "paper_17_scincl.pdf",
+        "page_number": 2,
+        "text": "Contributions: • We propose neighborhood contrastive learning for scientiﬁc document representations with citation graph embeddings (SciNCL) based on contrastive learning theory insights. • We sample positive (similar) and negative (dissimilar) papers from the k nearest neighbors in the citation graph embedding space, such that positives and negatives do not collide but are also hard to learn. • We compare against the state-of-the-art approach SPECTER (Cohan et al., 2020) and other strong methods on the SCIDOCS benchmark and ﬁnd that SciNCL outperforms SPECTER on average and on 9 of 12 metrics. • Finally, we demonstrate that with SciNCL, using only 1% of the triplets for training, starting with a general-domain language model, or training only the bias terms of the model is sufﬁcient to outperform the baselines. • Our code and models are publicly available.1 2 Related Work Contrastive Learning pulls representations of similar data points (positives) closer together, while representations of dissimilar documents (negatives) are pushed apart.",
+        "dense_rank": 19,
+        "dense_score": 0.49861443042755127,
+        "rerank_score": 4.409120082855225,
+        "nli_scores": {
+          "entailment": 5.175226760911755e-06,
+          "contradiction": 0.9997641444206238,
+          "neutral": 0.000230691977776587
+        }
+      }
+    },
+    {
+      "claim_id": "c38",
+      "split": "test",
+      "claim": "S2ORC contains no citation links or structured bibliographic metadata.",
+      "expected_label": "CONTRADICTED",
+      "predicted_label": "CONTRADICTED",
+      "correct": true,
+      "support_score": 0.00018464907770976424,
+      "contradiction_score": 0.9999562501907349,
+      "decisive_evidence": {
+        "rank": 3,
+        "score": 0.5306158661842346,
+        "chunk_id": "paper_18_s2orc_page_1_chunk_3",
+        "paper_id": "paper_18_s2orc",
+        "title": "paper_18_s2orc",
+        "filename": "paper_18_s2orc.pdf",
+        "page_number": 1,
+        "text": "Citation graphs like AMiner’s Open Academic Graph (Tang et al., 2008), the Microsoft Academic Graph (MAG) (Shen et al., 2018), and the Semantic Scholar literature graph (Ammar et al., 2018), have had widespread application in bibliometrics, science-of-science, information retrieval, and network analysis. Digital archives like arXiv,2 ∗denotes equal contribution 1Instructions for access to the data and model are available at https://github.com/allenai/s2orc/. 2https://arxiv.org Figure 1: Inline citations and references to ﬁgures and tables are annotated in S2ORC’s structured full text. Citations are linked to bibliography entries, which are linked to other papers in S2ORC. Figure and table references are linked to their captions.",
+        "dense_rank": 2,
+        "dense_score": 0.5306158661842346,
+        "rerank_score": 4.263631820678711,
+        "nli_scores": {
+          "entailment": 1.0105904038937297e-05,
+          "contradiction": 0.9999562501907349,
+          "neutral": 3.363472569617443e-05
+        }
+      }
+    },
+    {
+      "claim_id": "c39",
+      "split": "dev",
+      "claim": "Longformer preserves the quadratic self-attention cost of standard Transformers for long sequences.",
+      "expected_label": "CONTRADICTED",
+      "predicted_label": "CONTRADICTED",
+      "correct": true,
+      "support_score": 0.002291087293997407,
+      "contradiction_score": 0.9994344115257263,
+      "decisive_evidence": {
+        "rank": 1,
+        "score": 0.5680726766586304,
+        "chunk_id": "paper_19_longformer_page_1_chunk_0",
+        "paper_id": "paper_19_longformer",
+        "title": "paper_19_longformer",
+        "filename": "paper_19_longformer.pdf",
+        "page_number": 1,
+        "text": "Longformer: The Long-Document Transformer Iz Beltagy∗ Matthew E. Peters∗ Arman Cohan∗ Allen Institute for Artiﬁcial Intelligence, Seattle, WA, USA {beltagy,matthewp,armanc}@allenai.org Abstract Transformer-based models are unable to process long sequences due to their self-attention operation, which scales quadratically with the sequence length. To address this limitation, we introduce the Longformer with an attention mechanism that scales linearly with sequence length, making it easy to process documents of thousands of tokens or longer. Longformer’s attention mechanism is a drop-in replacement for the standard self-attention and combines a local windowed attention with a task motivated global attention. Following prior work on long-sequence transformers, we evaluate Longformer on character-level language modeling and achieve state-of-the-art results on text8 and enwik8.",
+        "dense_rank": 3,
+        "dense_score": 0.5680726766586304,
+        "rerank_score": 4.2279558181762695,
+        "nli_scores": {
+          "entailment": 0.00011280717444606125,
+          "contradiction": 0.9994344115257263,
+          "neutral": 0.00045270106056705117
+        }
+      }
+    },
+    {
+      "claim_id": "c40",
+      "split": "test",
+      "claim": "Lost in the Middle finds that models perform best whenever evidence is placed in the middle of the context.",
+      "expected_label": "CONTRADICTED",
+      "predicted_label": "CONTRADICTED",
+      "correct": true,
+      "support_score": 0.0041980501264333725,
+      "contradiction_score": 0.9997552037239075,
+      "decisive_evidence": {
+        "rank": 1,
+        "score": 0.4441679120063782,
+        "chunk_id": "paper_20_lost_in_middle_page_1_chunk_5",
+        "paper_id": "paper_20_lost_in_middle",
+        "title": "paper_20_lost_in_middle",
+        "filename": "paper_20_lost_in_middle.pdf",
+        "page_number": 1,
+        "text": "1st 5th 10th 15th 20th Position of Document with the Answer 55 60 65 70 75 Accuracy 20 Total Retrieved Documents (~4K tokens) gpt-3.5-turbo-0613 gpt-3.5-turbo-0613 (closed-book) Figure 1: Changing the location of relevant information (in this case, the position of the passage that answers an input question) within the language model’s input context results in a U-shaped performance curve—models are better at using relevant information that occurs at the very beginning (primacy bias) or end of its input context (recency bias), and performance degrades significantly when models must access and use information located in the middle of its input context. relevant documents from a search engine, database query results, etc; Petroni et al., 2020; Ram et al., 2023; Shi et al., 2023; Mallen et al., 2023; Schick et al., 2023, inter alia).",
+        "dense_rank": 8,
+        "dense_score": 0.4441679120063782,
+        "rerank_score": -0.10501062124967575,
+        "nli_scores": {
+          "entailment": 6.607965042348951e-05,
+          "contradiction": 0.9997552037239075,
+          "neutral": 0.00017872978060040623
+        }
+      }
+    },
+    {
+      "claim_id": "c41",
+      "split": "dev",
+      "claim": "The DPR paper reports a formal calibration analysis of retrieval confidence scores.",
+      "expected_label": "INSUFFICIENT_EVIDENCE",
+      "predicted_label": "INSUFFICIENT_EVIDENCE",
+      "correct": true,
+      "support_score": 0.002816351829096675,
+      "contradiction_score": 0.01926964335143566,
+      "decisive_evidence": {
+        "rank": 3,
+        "score": 0.5533223748207092,
+        "chunk_id": "paper_09_crag_page_2_chunk_1",
+        "paper_id": "paper_09_crag",
+        "title": "paper_09_crag",
+        "filename": "paper_09_crag.pdf",
+        "page_number": 2,
+        "text": "On account of the above issues, this paper particularly studies the scenarios where the retriever returns inaccurate results. A method named Corrective Retrieval-Augmented Generation (CRAG) is proposed to self-correct the results of retriever and improve the utilization of documents for augmenting generation. A lightweight retrieval evaluator is designed to assess the overall quality of retrieved documents for a query. This serves as a crucial component in RAG, contributing to informative generation by reviewing and evaluating the relevance and reliability of the retrieved documents. A confidence degree is quantified based on which different knowledge retrieval actions of {Correct, Incorrect, Ambiguous} can be triggered.",
+        "dense_rank": 2,
+        "dense_score": 0.5533223748207092,
+        "rerank_score": -1.1378121376037598,
+        "nli_scores": {
+          "entailment": 0.002816351829096675,
+          "contradiction": 0.01926964335143566,
+          "neutral": 0.977914035320282
+        }
+      }
+    },
+    {
+      "claim_id": "c42",
+      "split": "test",
+      "claim": "The ColBERT study includes a human evaluation of user satisfaction with search results.",
+      "expected_label": "INSUFFICIENT_EVIDENCE",
+      "predicted_label": "INSUFFICIENT_EVIDENCE",
+      "correct": true,
+      "support_score": 0.0005707851960323751,
+      "contradiction_score": 0.0031878952868282795,
+      "decisive_evidence": {
+        "rank": 2,
+        "score": 0.48538434505462646,
+        "chunk_id": "paper_02_colbert_page_6_chunk_4",
+        "paper_id": "paper_02_colbert",
+        "title": "ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT",
+        "filename": "paper_02_colbert.pdf",
+        "page_number": 6,
+        "text": "Per the oﬃcial evaluation, we use MRR@10 to measure eﬀectiveness. We use three sets of queries for evaluation. Te oﬃcial development and evaluation sets contain roughly 7k queries. However, the relevance judgements of the evaluation set are held-out by Microsof and eﬀectiveness results can only be obtained by submiting to the competition’s organizers. We submited our main re-ranking ColBERT model for the results in §4.2. In addition, the collection includes roughly 55k queries (with labels) that are provided as additional validation data. We re-purpose a random sample of 5k queries among those (i.e., ones not in our development or training sets) as a “local” evaluation set. Along with the oﬃcial development set, we use this held-out set for testing our models as well as baselines in §4.3.",
+        "dense_rank": 2,
+        "dense_score": 0.48538434505462646,
+        "rerank_score": -1.476996660232544,
+        "nli_scores": {
+          "entailment": 0.00012762383266817778,
+          "contradiction": 0.0031878952868282795,
+          "neutral": 0.9966844916343689
+        }
+      }
+    },
+    {
+      "claim_id": "c43",
+      "split": "dev",
+      "claim": "Contriever evaluates multilingual retrieval performance specifically on African-language benchmarks.",
+      "expected_label": "INSUFFICIENT_EVIDENCE",
+      "predicted_label": "INSUFFICIENT_EVIDENCE",
+      "correct": true,
+      "support_score": 0.0014812459703534842,
+      "contradiction_score": 0.17183159291744232,
+      "decisive_evidence": {
+        "rank": 2,
+        "score": 0.6972723603248596,
+        "chunk_id": "paper_03_contriever_page_9_chunk_5",
+        "paper_id": "paper_03_contriever",
+        "title": "paper_03_contriever",
+        "filename": "paper_03_contriever.pdf",
+        "page_number": 9,
+        "text": "First, we consider Mr. TyDi (Zhang et al., 2021), a multilingual information retrieval benchmark derived from TyDi QA (Clark et al., 2020). Given a question, the goal is to ﬁnd relevant documents in a pool of Wikipedia documents in the same language. In Mr. TyDi the pool of documents is restricted to the language of the query. Being able to retrieve relevant documents from another language is desirable to leverage large source of information that may no be available in all languages. In order to evaluate cross-lingual retrieval performance we derive an evaluation setting from MKQA (Longpre et al., 2020). Given a question in a speciﬁc language, we perform retrieval in English Wikipedia, and evaluate if the English answer is in the retrieved documents. The MKQA dataset makes this possible by providing the same questions and answers in 26 languages.",
+        "dense_rank": 2,
+        "dense_score": 0.6972723603248596,
+        "rerank_score": 2.7206344604492188,
+        "nli_scores": {
+          "entailment": 0.00010088412091135979,
+          "contradiction": 0.17183159291744232,
+          "neutral": 0.8280675411224365
+        }
+      }
+    },
+    {
+      "claim_id": "c44",
+      "split": "test",
+      "claim": "The GTR paper reports the total energy consumption and carbon emissions of model training.",
+      "expected_label": "INSUFFICIENT_EVIDENCE",
+      "predicted_label": "INSUFFICIENT_EVIDENCE",
+      "correct": true,
+      "support_score": 9.504494664724916e-05,
+      "contradiction_score": 0.057841695845127106,
+      "decisive_evidence": {
+        "rank": 4,
+        "score": 0.39486998319625854,
+        "chunk_id": "paper_04_gtr_page_11_chunk_4",
+        "paper_id": "paper_04_gtr",
+        "title": "paper_04_gtr",
+        "filename": "paper_04_gtr.pdf",
+        "page_number": 11,
+        "text": "Note that they only report results on 15 datasets of the BEIR benchmark. A.3 Recall on BEIR Table 8 presents the Recall@100 of GTR models and the baselines. Similar to NDCG@10, we observe that scaling up dual encoders lead to signiﬁcant gains on the BEIR benchmark in terms of recall.",
+        "dense_rank": 9,
+        "dense_score": 0.39486998319625854,
+        "rerank_score": -2.9957542419433594,
+        "nli_scores": {
+          "entailment": 2.0656341803260148e-05,
+          "contradiction": 0.057841695845127106,
+          "neutral": 0.9421376585960388
+        }
+      }
+    },
+    {
+      "claim_id": "c45",
+      "split": "dev",
+      "claim": "REALM evaluates robustness against adversarially modified retrieval documents.",
+      "expected_label": "INSUFFICIENT_EVIDENCE",
+      "predicted_label": "INSUFFICIENT_EVIDENCE",
+      "correct": true,
+      "support_score": 0.0006572845159098506,
+      "contradiction_score": 0.0018942696042358875,
+      "decisive_evidence": {
+        "rank": 3,
+        "score": 0.5860859155654907,
+        "chunk_id": "paper_05_realm_page_7_chunk_0",
+        "paper_id": "paper_05_realm",
+        "title": "paper_05_realm",
+        "filename": "paper_05_realm.pdf",
+        "page_number": 7,
+        "text": "REALM: Retrieval-Augmented Language Model Pre-Training Table 1. Test results on Open-QA benchmarks. The number of train/test examples are shown in paretheses below each benchmark. Predictions are evaluated with exact match against any reference answer. Sparse retrieval denotes methods that use sparse features such as TF-IDF and BM25. Our model, REALM, outperforms all existing systems.",
+        "dense_rank": 9,
+        "dense_score": 0.5860859155654907,
+        "rerank_score": 0.37456345558166504,
+        "nli_scores": {
+          "entailment": 9.312368638347834e-05,
+          "contradiction": 0.0018942696042358875,
+          "neutral": 0.9980125427246094
+        }
+      }
+    },
+    {
+      "claim_id": "c46",
+      "split": "test",
+      "claim": "The original RAG paper measures citation precision for every generated response.",
+      "expected_label": "INSUFFICIENT_EVIDENCE",
+      "predicted_label": "INSUFFICIENT_EVIDENCE",
+      "correct": true,
+      "support_score": 0.0030262921936810017,
+      "contradiction_score": 0.6111052632331848,
+      "decisive_evidence": {
+        "rank": 4,
+        "score": 0.5988127589225769,
+        "chunk_id": "paper_11_alce_page_4_chunk_6",
+        "paper_id": "paper_11_alce",
+        "title": "paper_11_alce",
+        "filename": "paper_11_alce.pdf",
+        "page_number": 4,
+        "text": "Citation recall. We calculate the citation recall of each statement (0 or 1) and average over all statements in the model response. For each statement si, its citation recall is 1 if and only if there is at least one citation (Ci ̸= ∅) and ϕ(concat(Ci), si) = 1, where ϕ(premise, hypothesis) is the NLI model that outputs 1 if the premise entails the hypothesis, and 0 otherwise; concat(Ci) concatenates all passages in Ci together (details in §C). The NLI evaluation is in accordance with the attributable to identified sources (AIS) framework (Rashkin et al., 2023): ϕ(concat(Ci), si) = 1 implies that si is true based solely on concat(Ci). Citation precision. Our citation precision evaluation detects citations that are irrelevant, but it does not require citing a minimal set.",
+        "dense_rank": 10,
+        "dense_score": 0.5988127589225769,
+        "rerank_score": -2.474658966064453,
+        "nli_scores": {
+          "entailment": 0.0001620819530216977,
+          "contradiction": 0.6111052632331848,
+          "neutral": 0.38873258233070374
+        }
+      }
+    },
+    {
+      "claim_id": "c47",
+      "split": "dev",
+      "claim": "Atlas includes a human evaluation of the interpretability of its generated explanations.",
+      "expected_label": "INSUFFICIENT_EVIDENCE",
+      "predicted_label": "INSUFFICIENT_EVIDENCE",
+      "correct": true,
+      "support_score": 0.00126868044026196,
+      "contradiction_score": 0.015928683802485466,
+      "decisive_evidence": {
+        "rank": 5,
+        "score": 0.4776208996772766,
+        "chunk_id": "paper_11_alce_page_8_chunk_5",
+        "paper_id": "paper_11_alce",
+        "title": "paper_11_alce",
+        "filename": "paper_11_alce.pdf",
+        "page_number": 8,
+        "text": "In summary, we find that (1) using comprehensive instructions enhances the citation quality of instruction-tuned models (§G.2); (2) including at least one demonstration improves the performance (§G.3); (3) finetuned models (FiD; Izacard and Grave, 2021) with POSTCITE lag behind LLMs in both correctness and citation quality and fail to generalize (§G.4). 6 Human Evaluation To verify that our automatic evaluation correlates with human judgement, we conduct human evaluation on selected models and request workers to judge model generations on three dimensions similar to Liu et al. (2023)—(1) utility: a 1-to-5 score indicating whether the generation helps answer the question; (2) citation recall: the annotator is given a sentence and all passages that the sentence cited, and is asked to judge whether the passages fully support the sentence; (3) citation precision: given a sentence and one of its citations, the annotator is asked to judge whether",
+        "dense_rank": 19,
+        "dense_score": 0.4776208996772766,
+        "rerank_score": -6.233680725097656,
+        "nli_scores": {
+          "entailment": 0.00126868044026196,
+          "contradiction": 0.015928683802485466,
+          "neutral": 0.98280268907547
+        }
+      }
+    },
+    {
+      "claim_id": "c48",
+      "split": "test",
+      "claim": "Self-RAG reports inference latency and memory use on mobile devices.",
+      "expected_label": "INSUFFICIENT_EVIDENCE",
+      "predicted_label": "INSUFFICIENT_EVIDENCE",
+      "correct": true,
+      "support_score": 0.0032931738533079624,
+      "contradiction_score": 0.001618559705093503,
+      "decisive_evidence": {
+        "rank": 5,
+        "score": 0.4406648874282837,
+        "chunk_id": "paper_08_self_rag_page_9_chunk_5",
+        "paper_id": "paper_08_self_rag",
+        "title": "paper_08_self_rag",
+        "filename": "paper_08_self_rag.pdf",
+        "page_number": 9,
+        "text": "We also observe a large performance gap between SELF-RAG and No Retriever or Critic baselines across tasks, indicating that training an LM with those models largely contributes to the performance gain of SELF-RAG. Using the top passages regardless of their relevance (Retrieve top 1) as in conventional RAG approaches causes a large drop in PopQA and ASQA, and removing ISSUP during the beam search results hurts performance on ASQA. This demonstrates the effectiveness of SELF-RAG’s capabilities of carefully selecting generations based fine-grained multiple criterion, instead of naively using all of the top passages from the retrieval model or solely depending on relevance scores. Effects of inference-time customization. One key benefit of our proposed framework is that it enables us to control how much each critique type affects the final generation sampling.",
+        "dense_rank": 6,
+        "dense_score": 0.4406648874282837,
+        "rerank_score": -1.9727187156677246,
+        "nli_scores": {
+          "entailment": 0.0032931738533079624,
+          "contradiction": 3.4491469705244526e-05,
+          "neutral": 0.9966722726821899
+        }
+      }
+    },
+    {
+      "claim_id": "c49",
+      "split": "dev",
+      "claim": "CRAG evaluates privacy leakage caused by external web retrieval.",
+      "expected_label": "INSUFFICIENT_EVIDENCE",
+      "predicted_label": "INSUFFICIENT_EVIDENCE",
+      "correct": true,
+      "support_score": 0.0005008302396163344,
+      "contradiction_score": 0.36663055419921875,
+      "decisive_evidence": {
+        "rank": 2,
+        "score": 0.4092928171157837,
+        "chunk_id": "paper_09_crag_page_2_chunk_1",
+        "paper_id": "paper_09_crag",
+        "title": "paper_09_crag",
+        "filename": "paper_09_crag.pdf",
+        "page_number": 2,
+        "text": "On account of the above issues, this paper particularly studies the scenarios where the retriever returns inaccurate results. A method named Corrective Retrieval-Augmented Generation (CRAG) is proposed to self-correct the results of retriever and improve the utilization of documents for augmenting generation. A lightweight retrieval evaluator is designed to assess the overall quality of retrieved documents for a query. This serves as a crucial component in RAG, contributing to informative generation by reviewing and evaluating the relevance and reliability of the retrieved documents. A confidence degree is quantified based on which different knowledge retrieval actions of {Correct, Incorrect, Ambiguous} can be triggered.",
+        "dense_rank": 14,
+        "dense_score": 0.4092928171157837,
+        "rerank_score": 0.6263323426246643,
+        "nli_scores": {
+          "entailment": 0.00022976231412030756,
+          "contradiction": 0.36663055419921875,
+          "neutral": 0.6331396698951721
+        }
+      }
+    },
+    {
+      "claim_id": "c50",
+      "split": "test",
+      "claim": "RAGAS includes a dedicated evaluation of multilingual retrieval-augmented generation.",
+      "expected_label": "INSUFFICIENT_EVIDENCE",
+      "predicted_label": "INSUFFICIENT_EVIDENCE",
+      "correct": true,
+      "support_score": 0.0011490756878629327,
+      "contradiction_score": 0.002710165223106742,
+      "decisive_evidence": {
+        "rank": 1,
+        "score": 0.7830036282539368,
+        "chunk_id": "paper_10_ragas_page_1_chunk_0",
+        "paper_id": "paper_10_ragas",
+        "title": "paper_10_ragas",
+        "filename": "paper_10_ragas.pdf",
+        "page_number": 1,
+        "text": "Ragas: Automated Evaluation of Retrieval Augmented Generation Shahul Es†, Jithin James†, Luis Espinosa-Anke∗♢, Steven Schockaert∗ †Exploding Gradients ∗CardiffNLP, Cardiff University, United Kingdom ♢AMPLYFI, United Kingdom shahules786@gmail.com,jamesjithin97@gmail.com {espinosa-ankel,schockaerts1}@cardiff.ac.uk Abstract We introduce Ragas (Retrieval Augmented Generation Assessment), a framework for reference-free evaluation of Retrieval Augmented Generation (RAG) pipelines. RAG systems are composed of a retrieval and an LLM based generation module, and provide LLMs with knowledge from a reference textual database, which enables them to act as a natural language layer between a user and textual databases, reducing the risk of hallucinations.",
+        "dense_rank": 1,
+        "dense_score": 0.7830036282539368,
+        "rerank_score": 7.460470676422119,
+        "nli_scores": {
+          "entailment": 0.0011490756878629327,
+          "contradiction": 0.002710165223106742,
+          "neutral": 0.9961407780647278
+        }
+      }
+    },
+    {
+      "claim_id": "c51",
+      "split": "dev",
+      "claim": "ALCE reports a controlled user study comparing citation usefulness for novice and expert readers.",
+      "expected_label": "INSUFFICIENT_EVIDENCE",
+      "predicted_label": "CONTRADICTED",
+      "correct": false,
+      "support_score": 0.001293666078709066,
+      "contradiction_score": 0.9430184364318848,
+      "decisive_evidence": {
+        "rank": 3,
+        "score": 0.5459521412849426,
+        "chunk_id": "paper_11_alce_page_15_chunk_2",
+        "paper_id": "paper_11_alce",
+        "title": "paper_11_alce",
+        "filename": "paper_11_alce.pdf",
+        "page_number": 15,
+        "text": "Table 11 demonstrates the experiments to show that ALCE is robust to shortcut cases. Using the top-1 passages or first two sentences of the top-1 passages induces almost perfect citation quality, but fluency and correctness are dramatically lower. E Citation Recall Discussion Our citation precision evaluation cannot detect a citation that partially supports the statement and hence will falsely penalize it. Consider a statement s3 and its citations [2][4][5]: if [2] entails partial information of s3 that [4][5] also entails, [2] will be counted as “irrelevant” while it should not be penalized. Liu et al. (2023) conduct human evaluation on citation precision in a different way: For each citation, they ask annotators to judge whether the citation (1) fully support, (2) partially support, or (3) does not support si.",
+        "dense_rank": 18,
+        "dense_score": 0.5459521412849426,
+        "rerank_score": -0.7624547481536865,
+        "nli_scores": {
+          "entailment": 0.0001608702732482925,
+          "contradiction": 0.9430184364318848,
+          "neutral": 0.05682075768709183
+        }
+      }
+    },
+    {
+      "claim_id": "c52",
+      "split": "test",
+      "claim": "FActScore reports expected calibration error for its factuality predictions.",
+      "expected_label": "INSUFFICIENT_EVIDENCE",
+      "predicted_label": "CONTRADICTED",
+      "correct": false,
+      "support_score": 0.010546448640525341,
+      "contradiction_score": 0.9962871074676514,
+      "decisive_evidence": {
+        "rank": 1,
+        "score": 0.513268232345581,
+        "chunk_id": "paper_12_factscore_page_4_chunk_4",
+        "paper_id": "paper_12_factscore",
+        "title": "paper_12_factscore",
+        "filename": "paper_12_factscore.pdf",
+        "page_number": 4,
+        "text": "More details are provided in Appendix A.3. 3.4 Results Statistics of the data and results are reported in Table 1. All LMSUBJs struggle with factual precision errors. InstructGPT and ChatGPT achieve FACTSCOREs of 42.5% and 58.3%, respectively. PerplexityAI, which uses a commercial search engine and thus should have a perfect FACTSCORE if directly copying the text from the correct Wikipedia page, attains a FACTSCORE of 71.5%. We provide a qualitative analysis of its error cases in the last paragraph of this section. ChatGPT and PerplexityAI often abstain from answering which presumably improves their factual precision. InstructGPT rarely abstains from answering, likely because it is not trained to do so.",
+        "dense_rank": 5,
+        "dense_score": 0.513268232345581,
+        "rerank_score": 3.746464490890503,
+        "nli_scores": {
+          "entailment": 6.252342427615076e-05,
+          "contradiction": 0.9962871074676514,
+          "neutral": 0.003650431986898184
+        }
+      }
+    },
+    {
+      "claim_id": "c53",
+      "split": "dev",
+      "claim": "SciFact records annotator confidence using a five-point confidence scale.",
+      "expected_label": "INSUFFICIENT_EVIDENCE",
+      "predicted_label": "CONTRADICTED",
+      "correct": false,
+      "support_score": 0.00045925151789560914,
+      "contradiction_score": 0.9950855374336243,
+      "decisive_evidence": {
+        "rank": 5,
+        "score": 0.518944501876831,
+        "chunk_id": "paper_14_scifact_open_page_4_chunk_4",
+        "paper_id": "paper_14_scifact_open",
+        "title": "paper_14_scifact_open",
+        "filename": "paper_14_scifact_open.pdf",
+        "page_number": 4,
+        "text": "The more systems identiﬁed a given CAP, the more likely it is to contain evidence. Total Retrieved Annotated ECAPs 209 187 (89%) 171 (82%) (c) Count of how many ECAPs from SCIFACT-ORIG would have been identiﬁed during pooled data collection. “Retrieved” indicates the number of ECAPs that would have been retrieved among the top k, and “Annotated” indicates the number that would further have been included in the annotation pool. Table 2: Annotation results and dataset statistics for SCIFACT-OPEN. than one system. The majority of CAPs are selected by a single system only, indicating high diversity in model predictions. As mentioned in §3.1, the total number of annotated CAPs is 732 (rather than 4 models × 250 CAPs / model = 1000) due to overlap in system predictions. Table 2c shows how many of the ECAPs from SCIFACT-ORIG would have been annotated by our pooling procedure.",
+        "dense_rank": 15,
+        "dense_score": 0.518944501876831,
+        "rerank_score": -1.2505950927734375,
+        "nli_scores": {
+          "entailment": 0.00045925151789560914,
+          "contradiction": 0.9950855374336243,
+          "neutral": 0.004455176647752523
+        }
+      }
+    },
+    {
+      "claim_id": "c54",
+      "split": "test",
+      "claim": "SciFact-Open evaluates cross-lingual scientific claim verification.",
+      "expected_label": "INSUFFICIENT_EVIDENCE",
+      "predicted_label": "INSUFFICIENT_EVIDENCE",
+      "correct": true,
+      "support_score": 0.0008180811419151723,
+      "contradiction_score": 0.002047369023784995,
+      "decisive_evidence": {
+        "rank": 5,
+        "score": 0.7288373708724976,
+        "chunk_id": "paper_14_scifact_open_page_2_chunk_3",
+        "paper_id": "paper_14_scifact_open",
+        "title": "paper_14_scifact_open",
+        "filename": "paper_14_scifact_open.pdf",
+        "page_number": 2,
+        "text": "With SCIFACT-OPEN, we introduce a challenging new test set for scientiﬁc claim veriﬁcation that more closely approximates how the task might be performed in real-word settings. This dataset will allow for further study of claim-evidence phenomena and model generalizability as encountered in open-domain scientiﬁc claim veriﬁcation. 2 Background and Task Overview We review the scientiﬁc claim veriﬁcation task, and summarize the data collection process and modeling approaches for SCIFACT, which we build upon in this work. We elect to use the SCIFACT dataset as our starting point because of the diversity of claims in the dataset and the availability of a number of state-of-the-art models that can be used for pooled data collection. In the following, we refer to the original SCIFACT dataset as SCIFACT-ORIG.",
+        "dense_rank": 5,
+        "dense_score": 0.7288373708724976,
+        "rerank_score": 3.9919192790985107,
+        "nli_scores": {
+          "entailment": 0.0008180811419151723,
+          "contradiction": 0.002047369023784995,
+          "neutral": 0.9971345663070679
+        }
+      }
+    },
+    {
+      "claim_id": "c55",
+      "split": "dev",
+      "claim": "FEVER includes audio and video evidence in addition to textual evidence.",
+      "expected_label": "INSUFFICIENT_EVIDENCE",
+      "predicted_label": "INSUFFICIENT_EVIDENCE",
+      "correct": true,
+      "support_score": 0.00014119911065790802,
+      "contradiction_score": 0.5139775276184082,
+      "decisive_evidence": {
+        "rank": 4,
+        "score": 0.5174959897994995,
+        "chunk_id": "paper_13_scifact_page_7_chunk_3",
+        "paper_id": "paper_13_scifact",
+        "title": "paper_13_scifact",
+        "filename": "paper_13_scifact.pdf",
+        "page_number": 7,
+        "text": "Thus pretraining on FEVER appears to improve the model’s ability to recognize textual entailment relationships between evidence and claim – particularly relationships indicated by non-domain-speciﬁc cues like “is associated with” or “has an important role in”. For RATIONALESELECTION, training on SCIFACT alone produces the best results. We examined the rationales that the SCIFACT- trained model identiﬁed but the FEVER- trained model missed, and found that they generally contain sciencespeciﬁc vocabulary. Thus, training on additional out-of-domain data provides little beneﬁt. RoBERTa-large exhibits the strongest performance on label prediction, while SCIBERT has a slight edge on rationale selection. The “claimonly” model exhibits very poor performance, which provides some reassurance that the claim negation procedure described in §3.2 does not introduce obvious statistical artifacts.",
+        "dense_rank": 6,
+        "dense_score": 0.5174959897994995,
+        "rerank_score": -0.0021365806460380554,
+        "nli_scores": {
+          "entailment": 4.595359132508747e-05,
+          "contradiction": 0.5139775276184082,
+          "neutral": 0.4859764873981476
+        }
+      }
+    },
+    {
+      "claim_id": "c56",
+      "split": "test",
+      "claim": "SPECTER is evaluated on scientific author-disambiguation as a downstream task.",
+      "expected_label": "INSUFFICIENT_EVIDENCE",
+      "predicted_label": "CONTRADICTED",
+      "correct": false,
+      "support_score": 0.0032927836291491985,
+      "contradiction_score": 0.9026995301246643,
+      "decisive_evidence": {
+        "rank": 3,
+        "score": 0.6252222061157227,
+        "chunk_id": "paper_16_specter_page_3_chunk_5",
+        "paper_id": "paper_16_specter",
+        "title": "paper_16_specter",
+        "filename": "paper_16_specter.pdf",
+        "page_number": 3,
+        "text": "2.5 Inference At inference time, the model receives one paper, P, and it outputs the SPECTER’s Transfomer pooled output activation as the paper representation for P (Equation 1). We note that for inference, SPECTER requires only the title and abstract of the given input paper; the model does not need any citation information about the input paper. This means that SPECTER can produce embeddings even for new papers that have yet to be cited, which is critical for applications that target recent scientiﬁc papers. 3 SCIDOCS Evaluation Framework Previous evaluations of scientiﬁc document representations in the literature tend to focus on small datasets over a limited set of tasks, and extremely high (99%+) AUC scores are already possible on these data for English documents (Chen et al., 2019; Wang et al., 2019). New, larger and more diverse benchmark datasets are necessary.",
+        "dense_rank": 3,
+        "dense_score": 0.6252222061157227,
+        "rerank_score": -0.13162457942962646,
+        "nli_scores": {
+          "entailment": 0.00034791097277775407,
+          "contradiction": 0.9026995301246643,
+          "neutral": 0.09695261716842651
+        }
+      }
+    },
+    {
+      "claim_id": "c57",
+      "split": "dev",
+      "claim": "SciNCL reports zero-shot retrieval results on patent documents.",
+      "expected_label": "INSUFFICIENT_EVIDENCE",
+      "predicted_label": "CONTRADICTED",
+      "correct": false,
+      "support_score": 0.012453078292310238,
+      "contradiction_score": 0.9978376030921936,
+      "decisive_evidence": {
+        "rank": 3,
+        "score": 0.5388140678405762,
+        "chunk_id": "paper_03_contriever_page_16_chunk_4",
+        "paper_id": "paper_03_contriever",
+        "title": "paper_03_contriever",
+        "filename": "paper_03_contriever.pdf",
+        "page_number": 16,
+        "text": "In Proceedings of the 23rd international conference on world wide web, pp. 373–374, 2014. 2 Nandan Thakur, Nils Reimers, Andreas Rücklé, Abhishek Srivastava, and Iryna Gurevych. Beir: A heterogenous benchmark for zero-shot evaluation of information retrieval models. arXiv preprint arXiv:2104.08663, 2021. 2, 6, 18, 19 James Thorne, Andreas Vlachos, Christos Christodoulopoulos, and Arpit Mittal. Fever: a large-scale dataset for fact extraction and veriﬁcation. arXiv preprint arXiv:1803.05355, 2018. 1 16",
+        "dense_rank": 1,
+        "dense_score": 0.5388140678405762,
+        "rerank_score": -0.2635034918785095,
+        "nli_scores": {
+          "entailment": 0.0004411529516801238,
+          "contradiction": 0.9978376030921936,
+          "neutral": 0.00172118516638875
+        }
+      }
+    },
+    {
+      "claim_id": "c58",
+      "split": "test",
+      "claim": "S2ORC includes peer-review scores and reviewer comments for every indexed paper.",
+      "expected_label": "INSUFFICIENT_EVIDENCE",
+      "predicted_label": "INSUFFICIENT_EVIDENCE",
+      "correct": true,
+      "support_score": 0.00032766975346021354,
+      "contradiction_score": 0.0035701680462807417,
+      "decisive_evidence": {
+        "rank": 1,
+        "score": 0.5054959058761597,
+        "chunk_id": "paper_18_s2orc_page_2_chunk_4",
+        "paper_id": "paper_18_s2orc",
+        "title": "paper_18_s2orc",
+        "filename": "paper_18_s2orc.pdf",
+        "page_number": 2,
+        "text": "Additionally, we provide 1.5M full text LATEX parses from which we have extracted, in addition to citations and references, the source text of tables and mathematical formulas. As shown in Table 1, S2ORC provides substantially more structured full text papers and covers a more diverse set of academic disciplines than other resources. 7pronounced “stork” 8The papers included in S2ORC are a curated subset of the papers in the Semantic Scholar literature graph (Ammar et al., 2018) that focuses only on English-language papers with abstracts or full text available. See §2.5 for details on ﬁltering through Semantic Scholar papers. In this paper, we describe the construction of S2ORC (§2). We provide summary statistics of the corpus (§3) and evaluate the data quality (§4).",
+        "dense_rank": 8,
+        "dense_score": 0.5054959058761597,
+        "rerank_score": 1.253478765487671,
+        "nli_scores": {
+          "entailment": 0.00014639961591456085,
+          "contradiction": 0.0035701680462807417,
+          "neutral": 0.9962834715843201
+        }
+      }
+    },
+    {
+      "claim_id": "c59",
+      "split": "dev",
+      "claim": "Longformer is evaluated on source-code summarization benchmarks.",
+      "expected_label": "INSUFFICIENT_EVIDENCE",
+      "predicted_label": "CONTRADICTED",
+      "correct": false,
+      "support_score": 0.0001955546613316983,
+      "contradiction_score": 0.9997846484184265,
+      "decisive_evidence": {
+        "rank": 1,
+        "score": 0.5597434043884277,
+        "chunk_id": "paper_19_longformer_page_1_chunk_1",
+        "paper_id": "paper_19_longformer",
+        "title": "paper_19_longformer",
+        "filename": "paper_19_longformer.pdf",
+        "page_number": 1,
+        "text": "Following prior work on long-sequence transformers, we evaluate Longformer on character-level language modeling and achieve state-of-the-art results on text8 and enwik8. In contrast to most prior work, we also pretrain Longformer and ﬁnetune it on a variety of downstream tasks. Our pretrained Longformer consistently outperforms RoBERTa on long document tasks and sets new state-of-the-art results on WikiHop and TriviaQA.",
+        "dense_rank": 2,
+        "dense_score": 0.5597434043884277,
+        "rerank_score": 1.5245847702026367,
+        "nli_scores": {
+          "entailment": 9.687134479463566e-06,
+          "contradiction": 0.9997846484184265,
+          "neutral": 0.00020573611254803836
+        }
+      }
+    },
+    {
+      "claim_id": "c60",
+      "split": "test",
+      "claim": "Lost in the Middle includes experiments on long-context automatic speech recognition.",
+      "expected_label": "INSUFFICIENT_EVIDENCE",
+      "predicted_label": "INSUFFICIENT_EVIDENCE",
+      "correct": true,
+      "support_score": 0.0013761402806267142,
+      "contradiction_score": 0.0607757493853569,
+      "decisive_evidence": {
+        "rank": 4,
+        "score": 0.5022343397140503,
+        "chunk_id": "paper_20_lost_in_middle_page_10_chunk_4",
+        "paper_id": "paper_20_lost_in_middle",
+        "title": "paper_20_lost_in_middle",
+        "filename": "paper_20_lost_in_middle.pdf",
+        "page_number": 10,
+        "text": "In a similar vein, Daniluk et al. (2017) find that attentive LSTM language models tend to mainly use recent history. Petroni et al. (2020) were among the first to demonstrate the potential of combining context from an information retrieval system with a pretrained language models for unsupervised question answering. O’Connor and Andreas (2021) found that many information-destroying operations had marginal effects on Transformer LMs’ predictions. Krishna et al. (2022) found that long-context neural generation in modestly-sized Transformer language models degenerates because models fail to properly condition on long context.",
+        "dense_rank": 13,
+        "dense_score": 0.5022343397140503,
+        "rerank_score": -4.954187393188477,
+        "nli_scores": {
+          "entailment": 0.0013761402806267142,
+          "contradiction": 0.0607757493853569,
+          "neutral": 0.9378481507301331
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,452 @@
+[
+  {
+    "query_id": "q01",
+    "query": "How does dense passage retrieval improve open-domain question answering compared with sparse retrieval methods?",
+    "relevant_papers": {
+      "paper_01_dpr": 3
+    }
+  },
+  {
+    "query_id": "q02",
+    "query": "How are the question encoder and passage encoder trained in Dense Passage Retrieval?",
+    "relevant_papers": {
+      "paper_01_dpr": 3
+    }
+  },
+  {
+    "query_id": "q03",
+    "query": "What evidence shows that learned dense retrievers can outperform BM25 for open-domain question answering?",
+    "relevant_papers": {
+      "paper_01_dpr": 3
+    }
+  },
+
+  {
+    "query_id": "q04",
+    "query": "How does ColBERT use late interaction to balance retrieval effectiveness and efficiency?",
+    "relevant_papers": {
+      "paper_02_colbert": 3
+    }
+  },
+  {
+    "query_id": "q05",
+    "query": "How are contextualized query and document token representations compared in ColBERT?",
+    "relevant_papers": {
+      "paper_02_colbert": 3
+    }
+  },
+  {
+    "query_id": "q06",
+    "query": "Why is late interaction more efficient than applying a full cross-encoder to every query-document pair?",
+    "relevant_papers": {
+      "paper_02_colbert": 3
+    }
+  },
+
+  {
+    "query_id": "q07",
+    "query": "How can dense information retrieval models be trained without relevance labels?",
+    "relevant_papers": {
+      "paper_03_contriever": 3
+    }
+  },
+  {
+    "query_id": "q08",
+    "query": "What role does contrastive learning play in the Contriever dense retrieval model?",
+    "relevant_papers": {
+      "paper_03_contriever": 3
+    }
+  },
+  {
+    "query_id": "q09",
+    "query": "How does an unsupervised dense retriever generalize across retrieval tasks without task-specific supervision?",
+    "relevant_papers": {
+      "paper_03_contriever": 3,
+      "paper_04_gtr": 1
+    }
+  },
+
+  {
+    "query_id": "q10",
+    "query": "Why do larger dual encoders generalize better across retrieval domains?",
+    "relevant_papers": {
+      "paper_04_gtr": 3
+    }
+  },
+  {
+    "query_id": "q11",
+    "query": "How does increasing model scale affect the transfer performance of dual-encoder retrievers?",
+    "relevant_papers": {
+      "paper_04_gtr": 3
+    }
+  },
+  {
+    "query_id": "q12",
+    "query": "What problem does GTR address when retrievers are trained on one domain but evaluated on another?",
+    "relevant_papers": {
+      "paper_04_gtr": 3
+    }
+  },
+
+  {
+    "query_id": "q13",
+    "query": "How does REALM combine retrieval with language model pretraining?",
+    "relevant_papers": {
+      "paper_05_realm": 3
+    }
+  },
+  {
+    "query_id": "q14",
+    "query": "How does REALM use external documents as a source of knowledge during pretraining?",
+    "relevant_papers": {
+      "paper_05_realm": 3
+    }
+  },
+  {
+    "query_id": "q15",
+    "query": "Why can retrieval-augmented pretraining reduce reliance on storing all factual knowledge in model parameters?",
+    "relevant_papers": {
+      "paper_05_realm": 3,
+      "paper_06_rag": 1
+    }
+  },
+
+  {
+    "query_id": "q16",
+    "query": "How does retrieval-augmented generation combine parametric and non-parametric memory?",
+    "relevant_papers": {
+      "paper_06_rag": 3,
+      "paper_05_realm": 1
+    }
+  },
+  {
+    "query_id": "q17",
+    "query": "What are the RAG-Sequence and RAG-Token formulations?",
+    "relevant_papers": {
+      "paper_06_rag": 3
+    }
+  },
+  {
+    "query_id": "q18",
+    "query": "How does a neural retriever and a sequence-to-sequence generator work together in the original RAG architecture?",
+    "relevant_papers": {
+      "paper_06_rag": 3
+    }
+  },
+
+  {
+    "query_id": "q19",
+    "query": "How does Atlas use retrieval-augmented language models for few-shot learning?",
+    "relevant_papers": {
+      "paper_07_atlas": 3
+    }
+  },
+  {
+    "query_id": "q20",
+    "query": "Why can retrieval help language models learn new tasks from only a small number of examples?",
+    "relevant_papers": {
+      "paper_07_atlas": 3
+    }
+  },
+  {
+    "query_id": "q21",
+    "query": "How does Atlas train and evaluate a retrieval-augmented model under few-shot settings?",
+    "relevant_papers": {
+      "paper_07_atlas": 3
+    }
+  },
+
+  {
+    "query_id": "q22",
+    "query": "How does Self-RAG decide when to retrieve and critique its own generations?",
+    "relevant_papers": {
+      "paper_08_self_rag": 3
+    }
+  },
+  {
+    "query_id": "q23",
+    "query": "What role do reflection tokens play in Self-RAG?",
+    "relevant_papers": {
+      "paper_08_self_rag": 3
+    }
+  },
+  {
+    "query_id": "q24",
+    "query": "How does Self-RAG address unnecessary retrieval and unsupported generation?",
+    "relevant_papers": {
+      "paper_08_self_rag": 3
+    }
+  },
+
+  {
+    "query_id": "q25",
+    "query": "How does corrective retrieval-augmented generation respond when retrieved documents are inaccurate?",
+    "relevant_papers": {
+      "paper_09_crag": 3
+    }
+  },
+  {
+    "query_id": "q26",
+    "query": "What decisions can the retrieval evaluator trigger in CRAG?",
+    "relevant_papers": {
+      "paper_09_crag": 3
+    }
+  },
+  {
+    "query_id": "q27",
+    "query": "How does CRAG use corrective actions and web search to improve weak retrieval results?",
+    "relevant_papers": {
+      "paper_09_crag": 3
+    }
+  },
+
+  {
+    "query_id": "q28",
+    "query": "How can retrieval-augmented generation systems be evaluated without reference answers?",
+    "relevant_papers": {
+      "paper_10_ragas": 3
+    }
+  },
+  {
+    "query_id": "q29",
+    "query": "What dimensions of a RAG pipeline are evaluated by RAGAS?",
+    "relevant_papers": {
+      "paper_10_ragas": 3
+    }
+  },
+  {
+    "query_id": "q30",
+    "query": "How does RAGAS measure faithfulness and relevance in retrieval-augmented generation?",
+    "relevant_papers": {
+      "paper_10_ragas": 3
+    }
+  },
+
+  {
+    "query_id": "q31",
+    "query": "How can large language models generate answers with verifiable citations?",
+    "relevant_papers": {
+      "paper_11_alce": 3
+    }
+  },
+  {
+    "query_id": "q32",
+    "query": "What evaluation dimensions are used to assess citation quality in ALCE?",
+    "relevant_papers": {
+      "paper_11_alce": 3
+    }
+  },
+  {
+    "query_id": "q33",
+    "query": "How does ALCE evaluate whether generated citations support the claims made in an answer?",
+    "relevant_papers": {
+      "paper_11_alce": 3
+    }
+  },
+
+  {
+    "query_id": "q34",
+    "query": "How does FActScore evaluate factual precision in long-form generation?",
+    "relevant_papers": {
+      "paper_12_factscore": 3
+    }
+  },
+  {
+    "query_id": "q35",
+    "query": "Why does FActScore decompose generated text into atomic facts?",
+    "relevant_papers": {
+      "paper_12_factscore": 3
+    }
+  },
+  {
+    "query_id": "q36",
+    "query": "How are atomic claims checked against a knowledge source when computing factual precision?",
+    "relevant_papers": {
+      "paper_12_factscore": 3
+    }
+  },
+
+  {
+    "query_id": "q37",
+    "query": "What task and evidence labels are introduced in the SciFact dataset?",
+    "relevant_papers": {
+      "paper_13_scifact": 3,
+      "paper_14_scifact_open": 1
+    }
+  },
+  {
+    "query_id": "q38",
+    "query": "How were scientific claims and evidence rationales constructed for SciFact?",
+    "relevant_papers": {
+      "paper_13_scifact": 3
+    }
+  },
+  {
+    "query_id": "q39",
+    "query": "How does SciFact represent supporting and refuting scientific evidence?",
+    "relevant_papers": {
+      "paper_13_scifact": 3,
+      "paper_14_scifact_open": 1
+    }
+  },
+
+  {
+    "query_id": "q40",
+    "query": "How does SciFact-Open extend scientific claim verification to open-domain literature?",
+    "relevant_papers": {
+      "paper_14_scifact_open": 3,
+      "paper_13_scifact": 1
+    }
+  },
+  {
+    "query_id": "q41",
+    "query": "Why is open-domain scientific claim verification more difficult than verification over a small fixed corpus?",
+    "relevant_papers": {
+      "paper_14_scifact_open": 3
+    }
+  },
+  {
+    "query_id": "q42",
+    "query": "How is the large scientific corpus for SciFact-Open constructed and annotated?",
+    "relevant_papers": {
+      "paper_14_scifact_open": 3,
+      "paper_18_s2orc": 1
+    }
+  },
+
+  {
+    "query_id": "q43",
+    "query": "What labels and evidence requirements are used in the FEVER fact verification dataset?",
+    "relevant_papers": {
+      "paper_15_fever": 3
+    }
+  },
+  {
+    "query_id": "q44",
+    "query": "How were supported, refuted, and not-enough-information claims created in FEVER?",
+    "relevant_papers": {
+      "paper_15_fever": 3
+    }
+  },
+  {
+    "query_id": "q45",
+    "query": "Why does fact verification require both a verdict and machine-readable supporting evidence?",
+    "relevant_papers": {
+      "paper_15_fever": 3,
+      "paper_13_scifact": 1
+    }
+  },
+
+  {
+    "query_id": "q46",
+    "query": "How does SPECTER learn scientific document representations from citation information?",
+    "relevant_papers": {
+      "paper_16_specter": 3
+    }
+  },
+  {
+    "query_id": "q47",
+    "query": "Why are citation links useful as supervision for scientific paper embeddings?",
+    "relevant_papers": {
+      "paper_16_specter": 3,
+      "paper_17_scincl": 1
+    }
+  },
+  {
+    "query_id": "q48",
+    "query": "How are scientific-paper representations evaluated in SPECTER?",
+    "relevant_papers": {
+      "paper_16_specter": 3
+    }
+  },
+
+  {
+    "query_id": "q49",
+    "query": "How does neighborhood contrastive learning improve scientific paper representations?",
+    "relevant_papers": {
+      "paper_17_scincl": 3
+    }
+  },
+  {
+    "query_id": "q50",
+    "query": "How are positive and negative examples selected in SciNCL?",
+    "relevant_papers": {
+      "paper_17_scincl": 3
+    }
+  },
+  {
+    "query_id": "q51",
+    "query": "Why can nearest-neighbor matching improve contrastive learning for scientific document embeddings?",
+    "relevant_papers": {
+      "paper_17_scincl": 3,
+      "paper_16_specter": 1
+    }
+  },
+
+  {
+    "query_id": "q52",
+    "query": "What information and metadata are included in the Semantic Scholar Open Research Corpus?",
+    "relevant_papers": {
+      "paper_18_s2orc": 3
+    }
+  },
+  {
+    "query_id": "q53",
+    "query": "How does S2ORC provide structured full text, citations, and bibliographic metadata at large scale?",
+    "relevant_papers": {
+      "paper_18_s2orc": 3
+    }
+  },
+  {
+    "query_id": "q54",
+    "query": "Why is a large structured scholarly corpus useful for scientific language-processing research?",
+    "relevant_papers": {
+      "paper_18_s2orc": 3
+    }
+  },
+
+  {
+    "query_id": "q55",
+    "query": "How does Longformer reduce the computational cost of processing long documents?",
+    "relevant_papers": {
+      "paper_19_longformer": 3
+    }
+  },
+  {
+    "query_id": "q56",
+    "query": "How do local and global attention patterns work in Longformer?",
+    "relevant_papers": {
+      "paper_19_longformer": 3
+    }
+  },
+  {
+    "query_id": "q57",
+    "query": "Why does linear-scaling attention make Longformer suitable for long-document tasks?",
+    "relevant_papers": {
+      "paper_19_longformer": 3
+    }
+  },
+
+  {
+    "query_id": "q58",
+    "query": "Why do language models struggle to use relevant information located in the middle of long contexts?",
+    "relevant_papers": {
+      "paper_20_lost_in_middle": 3,
+      "paper_19_longformer": 1
+    }
+  },
+  {
+    "query_id": "q59",
+    "query": "How does the position of relevant evidence affect question-answering accuracy in long-context language models?",
+    "relevant_papers": {
+      "paper_20_lost_in_middle": 3
+    }
+  },
+  {
+    "query_id": "q60",
+    "query": "What experiments demonstrate primacy and recency biases when language models process long input contexts?",
+    "relevant_papers": {
+      "paper_20_lost_in_middle": 3
+    }
+  }
+]
