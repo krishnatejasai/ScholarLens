@@ -95,33 +95,33 @@ Held-out test F1 scores:
 
 ```mermaid
 flowchart TD
-    A[Scientific PDF Papers] --> B[PyMuPDF Ingestion]
-    B --> C[Page-Level Text Extraction]
-    C --> D[Sentence-Aware Chunking]
-    D --> E[MiniLM Embeddings]
-    E --> F[(FAISS Vector Index)]
+    A["Scientific PDF Papers"] --> B["PyMuPDF Ingestion"]
+    B --> C["Page-Level Text Extraction"]
+    C --> D["Sentence-Aware Chunking"]
+    D --> E["MiniLM Embeddings"]
+    E --> F[("FAISS Vector Index")]
 
-    G[Research Question] --> H[Dense Retriever]
-    I[Scientific Claim] --> H
-
+    G["Research Question"] --> H["Dense Retriever"]
+    I["Scientific Claim"] --> H
     F --> H
-    H --> J[Top-K Candidate Chunks]
-    J --> K[Cross-Encoder Reranker]
-    K --> L[Ranked Scientific Evidence]
 
-    L --> M[FLAN-T5 Answer Generator]
-    M --> N[Citation-Grounded Answer]
-    N --> O[Citation Validation]
+    H --> J["Top-K Candidate Chunks"]
+    J --> K["Cross-Encoder Reranker"]
+    K --> L["Ranked Scientific Evidence"]
 
-    L --> P[DeBERTa NLI Verifier]
-    P --> Q{Verification Verdict}
-    Q --> R[Supported]
-    Q --> S[Contradicted]
-    Q --> T[Insufficient Evidence]
+    L --> M["FLAN-T5 Answer Generator"]
+    M --> N["Citation-Grounded Answer"]
+    N --> O["Citation Validation"]
 
-    L --> U[Evaluation Pipeline]
-    U --> V[Recall@K / MRR / nDCG]
-    U --> W[Accuracy / Macro-F1 / Confusion Matrix]
+    L --> P["DeBERTa NLI Verifier"]
+    P --> Q{"Verification Verdict"}
+    Q --> R["Supported"]
+    Q --> S["Contradicted"]
+    Q --> T["Insufficient Evidence"]
+
+    L --> U["Evaluation Pipeline"]
+    U --> V["Retrieval Metrics"]
+    U --> W["Verification Metrics"]
 ```
 
 ---
