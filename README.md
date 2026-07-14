@@ -258,7 +258,7 @@ scholarlens-ai/
 Clone the repository:
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/krishnatejasai/ScholarLens.git
 cd scholarlens-ai
 ```
 
