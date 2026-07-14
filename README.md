@@ -281,14 +281,19 @@ python3 -m pip install -r requirements.txt
 
 | Command | Description |
 |----------|-------------|
-| `retrieve` | Dense semantic retrieval |
-| `rerank` | Cross-encoder reranking |
-| `verify` | Scientific claim verification |
-| `answer` | Citation-grounded answer generation |
-| `eval-retrieval` | Retrieval benchmark |
-| `eval-claims` | Claim verification benchmark |
+| `ingest` | Extract text and metadata from scientific PDF files |
+| `chunk` | Split processed papers into overlapping retrieval chunks |
+| `embed` | Generate dense embeddings and build the FAISS index |
+| `retrieve` | Perform dense semantic evidence retrieval |
+| `rerank` | Rerank retrieved passages using a cross-encoder |
+| `verify` | Verify scientific claims against retrieved evidence |
+| `answer` | Generate citation-grounded answers |
+| `eval-retrieval` | Evaluate dense retrieval and reranking |
+| `prepare-claims` | Prepare evidence for claim-verification evaluation |
+| `eval-claims` | Evaluate the scientific claim-verification pipeline |
 | `figures` | Generate evaluation figures |
-| `report` | Generate markdown reports |
+| `report` | Generate consolidated evaluation reports |
+| `analyze-claim-errors` | Analyze claim-verification errors |
 
 ---
 
@@ -303,19 +308,19 @@ data/raw_papers/
 Run ingestion:
 
 ```bash
-python3 src/ingest.py
+python main.py ingest
 ```
 
 Generate overlapping chunks:
 
 ```bash
-python3 src/chunk.py
+python main.py chunk
 ```
 
 Generate embeddings and build the FAISS index:
 
 ```bash
-python3 src/embed.py
+python main.py embed
 ```
 
 ---
@@ -379,6 +384,12 @@ python main.py eval-claims
 
 ```bash
 python main.py figures
+```
+
+### Generate Evaluation Reports
+
+```bash
+python main.py report
 ```
 
 ---
